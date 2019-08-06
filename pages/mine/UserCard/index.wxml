@@ -1,0 +1,48 @@
+<view class="container">
+  <view id="CardBox">
+
+    <view class="Level bred" wx:if="{{card.level_id == 4}}">
+      <image src="/images/crown.png"></image>
+      <text>主任委员</text>
+    </view>
+
+    <view class="Level byellow" wx:if="{{card.level_id == 3}}">
+      <image src="/images/crown.png"></image>
+      <text>常务委员</text>
+    </view>
+
+    <view class="Level bgray" wx:if="{{card.level_id == 2}}">
+      <image src="/images/crown.png"></image>
+      <text>认证会员</text>
+    </view>
+
+    <image src="/images/Bigcard.png" class="CardImg"></image>
+
+    <view class="Info">
+      <view class="InfoName">{{card.nickname}}</view>
+      <view class="InfoPosts">{{card.posts}}</view>
+    </view>
+
+    <view class="ComInfo">
+      <view class="ComTel" bindtap='CallTel' data-tel="{{card.mobile}}">
+        <image src="/images/tel.png"></image>
+        {{card.mobile}}
+      </view>
+      <view class="ComName"  bindtap='CompanyShow' data-id="{{card.company_id}}">
+        <image src="/images/com.png"></image>
+        {{card.name}}
+      </view>
+      <view class="ComAddress">
+        <image src="/images/address.png"></image>
+        {{card.address}}
+      </view>
+    </view>
+
+  </view>
+
+  <view class="EditUserInfo" bindtap='EditUserInfo' > 
+    <button open-type="share"><image src="/images/share.png"></image>分享名片</button>
+  </view>
+
+
+</view>

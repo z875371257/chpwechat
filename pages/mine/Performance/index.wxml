@@ -1,0 +1,20 @@
+<!--pages/mine/Performance/index.wxml-->
+<view class="container">
+
+  <view class="Row" wx:for="{{Yj}}" wx:for-index="idx">
+    <view class="RowLeft"><view class="RowSort">0{{idx+1}}</view></view>
+    <view class="RowRight">
+      <view class="RowTitle">{{item.description}}</view>
+      <view class="RowDes">
+        <view class="RowStatus">{{item.create_time}}</view>
+        <view class="RightDel" bindtap='DelData' data-id="{{item.id}}">删除</view>
+        <view class="RightEdit" bindtap='EditData' data-id="{{item.id}}">编辑</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="Xian"></view>
+  <view class="AddButton" bindtap='AddYj' > <view><image src="/images/add.png"></image>新增业绩</view></view>
+
+</view>

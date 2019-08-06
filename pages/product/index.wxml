@@ -1,0 +1,91 @@
+<view class="container">
+    <!-- 搜索框 -->
+    <view class="head-search">
+        <view class="search-top" bindtap="searchbind">
+            <image src="/images/home_search.png"></image>
+            <input type="text" class="search"  placeholder="{{keyword}}"  placeholder-class="search-input" confirm-type="search" bindchange="bindchange" adjust-position />
+        </view>
+    </view>
+
+    <!-- 筛选栏 -->
+    <view class="screen">
+      <view class="screen-li" bindtap="CateShow"  wx:if="{{ cate }}"><view>{{catename}}</view><image src="/images/noopen.png"></image></view>
+      <view class="screen-li screen-active" bindtap="CateShow" wx:if="{{!cate}}"><view>{{catename}}</view><image src="/images/open.png"></image></view>
+
+      <view class="screen-li" bindtap="CityShow" wx:if="{{ CityList }}"><view>{{city}}</view><image src="/images/noopen.png"></image></view>
+      <view class="screen-li screen-active" bindtap="CityShow" wx:if="{{ !CityList }}"><view>{{city}}</view><image src="/images/open.png"></image></view>
+      <view class="screen-li" bindtap="Sift" wx:if="{{ SiftShow }}">精选推荐</view>
+      <view class="screen-li  screen-active" bindtap="Sift" wx:if="{{ !SiftShow }}">精选推荐</view>
+    </view>
+    
+    <view class="city-box" hidden='{{ CityList }}'>      
+      <view class="city-list" >
+          <view class="{{ActiveCity==2000?'cityactive':''}}" data-index="2000" data-name="全国" bindtap="CitySelect">全国</view>
+          <block wx:for="{{citys}}" >
+          <view class="{{ActiveCity==index?'cityactive':''}}" data-index="{{index}}" data-name="{{item.city}}" bindtap="CitySelect">{{item.city}}</view>
+          </block>
+      </view>
+    </view>
+
+    <!-- 全部分类 -->
+    <view class="cate" hidden='{{ cate }}' catchtouchmove="move">
+        <!-- 一级分类 -->
+        <view class="cate1" style=" width: {{cate1}}; ">
+            <view class="cate-li" bindtap='GetPros' id="0" data-name="全部分类">全部分类</view>
+            <block  wx:for="{{cate1list}}">
+            <view class="cate-li {{aActive==item.id?'active':''}}" data-index="{{item.id}}"  bindtap='CateOneSelect'  id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+            </block>
+        </view>
+
+        <!-- 二级分类 -->
+        <view class="cate2" style=" width: {{cate2}}; ">
+          <scroll-view scroll-y  style="height: 6000rpx;">
+            <view class="cate-li" bindtap='GetPros' id="{{cate2id}}" data-name="{{cate2name}}">全部</view>
+            <block  wx:for="{{cate2list}}">
+                  <view class="cate-li {{bActive==item.id?'active':''}}" data-index="{{item.id}}" bindtap='CateTwoSelect' id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+            </block>
+          </scroll-view>
+        </view>
+
+        <!-- 三级分类 -->
+        <view class="cate3" style=" width: {{cate3}}; ">
+          <scroll-view scroll-y  style="height: 600rpx;">
+            <view class="cate-li" bindtap='GetPros' id="{{cate3id}}" data-name="{{cate3name}}">全部</view>
+            <block  wx:for="{{cate3list}}">
+              <view class="cate-li" bindtap='GetPros' id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+            </block>
+          </scroll-view>
+        </view>
+    </view> 
+
+      <!-- 产品列表 -->
+      <view class="product_list"  wx:for="{{product}}">
+          <view class="proleft" bindtap='ProductShow' data-id="{{item.id}}">  
+            <image src="{{item.thumb}}"></image>
+          </view>
+          <view class="proright">   
+            <view class="proright-name" bindtap='ProductShow' data-id="{{item.id}}">{{item.name}}</view>
+            <view class="product-company" bindtap="CompanyShow" data-id="{{item.company_id}}">
+                <view class="pro-free bred"  wx:if="{{item.level == 4}}"> <image src="/images/crown.png"></image>主任委员</view>
+                <view class="pro-free byellow"  wx:if="{{item.level == 3}}"> <image src="/images/crown.png"></image>常务委员</view>
+                <view class="pro-free bgray"  wx:if="{{item.level == 2}}"> <image src="/images/crown.png"></image>认证会员</view>
+                <view class="pro-company-name"  wx:if="{{item.level == 1}}" style='width:auto' bindtap="CompanyShow" data-id="{{item.company_id}}" >{{item.company}}</view>
+                <view class="pro-company-name"  wx:if="{{item.level != 1}}">{{item.company}}</view>
+                <image src="/images/more.png" class="company-name-more"></image>
+            </view>
+          </view>
+      </view>
+
+      <!-- 查看更多按钮 -->
+      <view class="more-box" hidden='{{!NotPro}}'  bindtap="More">
+        <view class="more">查看更多<image src="/images/morebottom.png"></image></view>
+      </view>
+
+      <!-- 无内容提示 -->
+      <view class="NotPro" hidden='{{NotPro}}'>到底了^_^</view>
+
+      <!--  遮盖  -->
+      <view class="cover" catchtouchmove="move" hidden='{{ cover }}' bindtap='CateShow'></view>
+      <view class="cover" catchtouchmove="move" hidden='{{ covers }}' bindtap='CityShow'></view>
+
+</view>

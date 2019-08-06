@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/Register/index",
+    "pages/mine/Login/Userreg/index",
+    "pages/mine/CompanyRz/index",
+    "pages/mine/Share/index",
+    "pages/mine/index",
+    "pages/mine/Login/index",
+    "pages/article/index",
+    "pages/mine/Auth/index",
+    "pages/company/index",
+    "pages/product/index",
+    "pages/index/ArticleShow/index",
+    "pages/mine/Register/next/index",
+    "pages/mine/Product/index",
+    "pages/mine/Message/index",
+    "pages/mine/Message/show/index",
+    "pages/mine/Client/index",
+    "pages/company/card/index",
+    "pages/company/show/index",
+    "pages/mine/UserCard/index",
+    "pages/mine/Certificate/index",
+    "pages/mine/Performance/index",
+    "pages/mine/Performance/Add/index",
+    "pages/mine/Performance/Edit/index",
+    "pages/mine/Company/index",
+    "pages/mine/Article/index",
+    "pages/mine/Article/Add/index",
+    "pages/mine/Article/Edit/index",
+    "pages/mine/Product/Add/index",
+    "pages/mine/Product/Edit/index",
+    "pages/mine/Colleague/index",
+    "pages/mine/UserInfo/index",
+    "pages/mine/UserInfo/edit/Posts",
+    "pages/mine/UserInfo/edit/index",
+    "pages/mine/UserInfo/edit/Email",
+    "pages/mine/Company/edit/index",
+    "pages/product/show/index",
+    "pages/article/show/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E65617",
+    "navigationBarTitleText": "清洁供热商务通",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-selected.png"
+      },
+      {
+        "pagePath": "pages/product/index",
+        "text": "找产品",
+        "iconPath": "images/article.png",
+        "selectedIconPath": "images/article-selected.png"
+      },
+      {
+        "pagePath": "pages/company/index",
+        "text": "找公司",
+        "iconPath": "images/company.png",
+        "selectedIconPath": "images/company-selected.png"
+      },
+      {
+        "pagePath": "pages/article/index",
+        "text": "找采购",
+        "iconPath": "images/product.png",
+        "selectedIconPath": "images/product-selected.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine-selected.png"
+      }
+    ],
+    "selectedColor": "#E65617",
+    "backgroundColor": "#FFFFFF"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请点击允许"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

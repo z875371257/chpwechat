@@ -1,0 +1,21 @@
+/* pages/company/card/index.wxss */
+page{background: #F9F9F9;}
+
+.Cz{margin-top:20rpx;}
+.Cz view{float:left;background: #FFF;font-size:28rpx;padding:10rpx 20rpx;border-radius: 40rpx;border:2rpx solid #EEE;}
+.Cz button{float:left;background: #FFF;font-size:28rpx;padding:10rpx 20rpx;border-radius: 40rpx;border:2rpx solid #EEE;height:56rpx;line-height: 38rpx;color:#4A9FE8;border:2rpx solid #4A9FE8;}
+.Cz button::after{border:none}
+.Cz button image{width:34rpx;height:34rpx;float:left;margin-top:2rpx;}
+.Cz view image{width:34rpx;height:34rpx;float:left;margin-top:2rpx;}
+
+.MoreCard{width: 100%;background: #FFF;margin-top:60rpx;}
+.Rests{width:100%;border-bottom:2rpx solid #EEE;height:100rpx;text-align: center;line-height: 100rpx;font-size:32rpx;color:#999;position: relative}
+.Rests image{width:36rpx;height: 36rpx;display: inline-block;position: absolute;top:36rpx;}
+
+.MoreCardList{width:100%;height:100rpx;border-bottom: 2rpx solid #EEE;line-height: 100rpx;clear: both;}
+.CardListName{float:left;padding-left: 37rpx;font-size:32rpx;width: 130rpx}
+.CardListPosts{float:left;padding-left:20rpx;font-size:28rpx;color:#999;line-height: 108rpx;}
+.CardListCollect{ float:right;margin-right: 40rpx;font-size:28rpx;border-radius: 40rpx;border:2rpx solid #EEE;height:56rpx;width: 160rpx;line-height: 56rpx;margin-top:22rpx;}
+
+.CardListCollect image{width:34rpx;height:34rpx;float:left;margin-top:12rpx;margin-left:10rpx;}
+.MoreCardList:nth-last-child(1){border-bottom: none;}

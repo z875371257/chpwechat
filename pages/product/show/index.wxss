@@ -1,0 +1,45 @@
+/* pages/product/show/index.wxss */
+@import '../../../wxParser/index.wxss';
+page{background: #FFF;}
+/* 大图 */
+.bigthumb{width:100%;height:562rpx;}
+.bigthumb image{width:100%;height:100%;}
+/* 标题 */
+.show-title{background: rgba(0, 0, 0, 0.4);padding:30rpx 30rpx 50rpx;font-size:34rpx;color:#FFF;overflow: hidden;margin-top:-180rpx;width: 690rpx;max-height: 76rpx;line-height:46rpx;}
+/*  公司展示  */
+.show-company-box{  background: #FFF;width:100%;border-bottom: 10rpx solid #F9F9F9;margin-top:-30rpx;border-top-left-radius: 40rpx;border-top-right-radius: 40rpx; }
+.show-company{width: 100%;padding:50rpx 0;height:116rpx;}
+.show-company-thumb{width:185rpx;float: left;height:113rpx;margin-left:30rpx;position: relative;}
+.company-thumbs{width:150rpx;height:113rpx;float: right;position: absolute;left: 35rpx;top:0;border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;}
+.wrz-company-thumbs{width:150rpx;height:113rpx;margin: auto;}
+.show-company-level{width:50rpx; height:100%;display: inline-block;font-size:20rpx;line-height:20rpx;float:left;}
+.show-company-level image{width:32rpx;height:26rpx;position: absolute;}
+.show-company-level text{position: absolute;top:28rpx;color:#FFF;left:6rpx;}
+.li-title{float: left;width:366rpx;height: 116rpx;padding-left:20rpx;overflow: hidden;}
+.company-name{height:76rpx;width:100%;overflow: hidden;font-size:30rpx;line-height:34rpx;}
+.company-xj{color:#999;font-size:30rpx;height:40rpx;overflow: hidden;position: relative;line-height: 40rpx;margin-top:4rpx;}
+.company-xj image{width: 144rpx;height:32rpx;position: absolute;top:4rpx;left:130rpx;}
+.company-name-more{width:30rpx;height:38rpx;display: inline-block;}
+.li-card{float:left;padding-left:20rpx;font-size:26rpx;color:#3A99EB;width:80rpx;margin-top:12rpx;text-align: center}
+.li-card image{width:50rpx;height:50rpx;margin:auto}
+/* 采购详情 */
+.show-content{padding:30rpx;font-size:30rpx;margin-bottom: 100rpx;width:690rpx;}
+.show-content-title{color:#E65617;font-size:40rpx;margin-bottom: 20rpx;}
+/* 我要供货 */
+.show-contact{width:100%;height:100rpx;position: fixed;bottom: 0;background: #E65617;text-align: center;line-height: 100rpx;color:#FFF;}
+
+.supply-model{width: 600rpx;margin: auto;position: fixed;z-index: 99;top:140rpx;}
+.supply-header{background: #F9F9F9;border-top-right-radius: 12rpx;border-top-left-radius: 12rpx;padding:30rpx;}
+.supply-close{width:54rpx;height:54rpx;position: absolute;right:20rpx;top:20rpx;z-index: 110}
+.supply-close image{width:100%;height:100%;}
+.supply-title{font-size:38rpx;margin: 40rpx auto 0;text-align: center;}
+.supply-description{margin-top:10rpx;color:#E65617;font-size:30rpx;text-align: center;}
+.supply-body{background: #FFF;padding:20rpx 30rpx 50rpx;}
+.supply-li{margin-top:20rpx;}
+.supply-li-name{display: inline-block;width: 160rpx;font-size:30rpx;text-align: right;}
+.supply-li-input{display: inline-block;color:#999;width:340rpx;font-size:28rpx;padding:6rpx 20rpx;background: #F5F5F5;}
+.supply-li-input input{display: inline;}
+
+.supply-footer button{width:300rpx;border:0;border-radius: 0;background: #FFF;border-top:2rpx solid #EEE;font-size:34rpx;display:inline-block;}
+.supply-footer button::after{border:none;}
+.supply-footer button:nth-child(2){background: #3A99EB;color:#FFF;}

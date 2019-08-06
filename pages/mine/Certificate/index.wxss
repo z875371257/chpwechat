@@ -1,0 +1,16 @@
+/* pages/mine/Certificate/index.wxss */
+.container{background: #FFF}
+.ListBox{width:670rpx;margin:20rpx auto;}
+.List{width:320rpx;height:290rpx;float:left;margin-left: 30rpx;margin-top:20rpx;}
+.List image{width: 100%;height:240rpx;}
+
+.Del{font-size: 28rpx;height: 50rpx;line-height: 50rpx;float:right}
+
+.a{color:#4A9FE8}
+.b{color:#ccc;}
+.c{color:red;}
+.Status{float:right;font-size:28rpx;height:50rpx;line-height: 50rpx;margin-right: 40rpx;}
+.Xian{height:40rpx;background: #F9F9F9;width: 100%;}
+.AddButton{background: #FFF;width:100%;height:100rpx;font-size:32rpx;color:#4A9FE8;}
+.AddButton image{width:34rpx;height:34rpx;float:left;margin-top:33rpx;}
+.AddButton view{margin:auto;width: 180rpx;text-align: center;height:100rpx;line-height: 100rpx; }

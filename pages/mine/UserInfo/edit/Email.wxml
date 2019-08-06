@@ -1,0 +1,19 @@
+<view class="container">
+
+  <form bindsubmit="SaveForm">
+    <view class="Row">
+      <view class="RowLeft">原邮箱</view>
+      <view class="RowRight">{{info.email}}</view>
+    </view>
+
+    <view class="Row">
+      <view class="RowLeft">新邮箱</view>
+      <view class="RowRight">
+        <input type='text'  name="email"  placeholder='请输入邮箱地址' ></input>
+      </view>
+    </view>
+
+    <button class="SaveInfo" form-type='submit'>保存</button>
+  </form>
+
+</view>

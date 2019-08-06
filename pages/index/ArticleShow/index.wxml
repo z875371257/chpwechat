@@ -1,0 +1,52 @@
+<!--pages/index/ArticleShow/index.wxml-->
+
+<import src="../../../wxParser/chp.wxml"/>
+<view class="GoHome" bindtap='GoHome'> <image src='/images/gohome.png'></image>  </view>
+
+<view class="ArticleBox">
+  <view class="ArticleTitle">{{show.title}}</view>
+  <view class="ArticleDes">
+    <view class="ArticleFrom">来源：{{show.from}}<text decode="true">&ensp;|&ensp;</text></view>
+    
+    <view class="ArticleTime">{{show.publish_time}}</view>
+      <view class="Cz">
+      <button   open-type="share"  id="{{card.id}}"> 
+          <image src="/images/share.png"></image> 
+          分享
+      </button>
+      </view>
+  </view>
+  <view class="ArticleContent">
+   <template is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+  </view>
+</view>
+<!-- 评论区 -->
+<!-- <view class="CommentBox">
+  <view class="MineComment">
+    <view class="Avatar"><open-data type="userAvatarUrl"></open-data></view>
+    
+    <view class="MyComment">
+      <form  bindsubmit="CommentForm">  
+        <input type='text' name="message"></input>
+        <input type='text' name="article_id" value='{{show.id}}' style='display:none'></input>
+        <button  form-type='submit'>提交</button>
+      </form>
+    </view>
+  </view>
+</view>
+<view class="Xian"></view>
+<view style='width:100%;background:#FFF;'>
+<view class="CommentList" wx:for="{{show.comment}}">
+    <view class="CommentName">{{item.name}}</view>
+    <view class="CommentTime">{{item.create_time}}</view>
+    <view class="CommentMsg">{{item.message}}</view>
+</view>
+</view> -->
+<!-- 相关推荐 -->
+<view class="Related clear">
+  <view class="RelatedTitle">相关推荐</view>
+  <view class="RelatedList" wx:for="{{show.related}}" bindtap='ChpArticleShow' data-id="{{item.aid}}">
+    <view class="ListLeft"><image src="{{item.thumb}}"></image> </view>
+    <view class="ListRight"><text decode>{{item.title}}</text></view>
+  </view>
+</view>

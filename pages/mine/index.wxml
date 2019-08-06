@@ -1,0 +1,117 @@
+<!--pages/mine/index.wxml-->
+<view class="container">
+  <!-- 未注册打开弹框 -->
+  <view class="covers" catchtouchmove="move" hidden="{{Pop}}" bindtap='Closes'></view>
+
+  <view class="ShowPop" hidden="{{Pop}}" catchtouchmove="move">
+    <view class="PopImage"  bindtap='ShowDetail' data-type="2"><image src="{{Adver}}"></image></view>
+    <view class="close" bindtap='Closes'>
+    <image src="/images/x.png"></image>
+    </view>
+  </view>
+
+  <view class="UserInfo">
+    <view class="UserAvatar" wx:if="{{IsLogin}}"><image src="https://www.chplaza.cn/static/admin/images/avatar.png"></image></view>
+    <view class="UserAvatar" wx:if="{{!IsLogin}}"><image src="{{info.headimg}}"></image></view>
+
+    <view class="UserBox NoLogin" wx:if="{{IsLogin}}">
+
+      <view bindtap='ShowDetail' data-type="login">登录</view>
+      <view>|</view>
+      <view bindtap='ShowDetail' data-type="login">注册</view>
+      
+    </view>
+    <view class="UserBox" wx:if="{{!IsLogin}}">
+      <view class="UserName">{{info.nickname}}</view>
+      <view class="UserPosts">{{info.posts}}<text wx:if="{{info.is_company == '0'}}">(待审)</text></view>
+      <view class="UserCompany">{{info.company}}</view>
+    </view>
+    <view class="UserCard" bindtap='ShowDetail' data-type="0"> <image src="/images/cardinfo.png"></image><image src="/images/more.png"></image></view>
+  </view>
+ 
+  <view class="Row" bindtap='ShowDetail' data-type="1">
+    <view class="RowLeft"><image src="/images/mine1.png"></image><text>平台会员</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>了解权益</text></view>
+  </view>
+  <view class="Row"   bindtap='ShowDetail' data-type="2">
+    <view class="RowLeft"><image src="/images/mine2.png"></image><text>公司认证</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>查看证书</text></view>
+  </view>
+  <view class="Row" bindtap='ShowDetail' data-type="3">
+    <view class="RowLeft"><image src="/images/mine3.png"></image><text>个人资料</text></view>
+    <view class="RowRight" ><image src="/images/more.png"></image><text>编辑个人资料</text></view>
+  </view>
+  <view class="Row" bindtap='ShowDetail' data-type="message">
+    <view class="RowLeft"><image src="/images/message.png"></image><text>我的消息</text></view>
+    <view class="RowRight" ><image src="/images/more.png"></image><view wx:if="{{readmessage}}" class="readmessage"></view><text>查看消息</text></view>
+  </view>
+
+  <view class="Row" style='border-bottom:none' >
+    <button open-type="share" class='contacButton'>
+    <view class="RowLeft"><image src="/images/mine4.png"></image><text>邀请好友</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>邀请他人入驻</text></view>
+    </button>
+  </view>
+
+  <view class="Line"></view>
+
+  <view class="Row" bindtap='ShowDetail' data-type="0">
+    <view class="RowLeft"><image src="/images/mine5.png"></image><text>我的名片</text></view>
+    <view class="RowRight"  ><image src="/images/more.png"></image><text>分享给他人</text></view>
+  </view>
+  <view class="Row"  bindtap='ShowDetail' data-type="6">
+    <view class="RowLeft"><image src="/images/mine6.png"></image><text>我的公司</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>查看公司信息</text></view>
+  </view>
+  <view class="Row"   bindtap='ShowDetail' data-type="7">
+    <view class="RowLeft"><image src="/images/mine7.png"></image><text>我的同事</text></view>
+    <view class="RowRight"><image src="/images/more.png" ></image><text>转移管理员</text></view>
+  </view>
+  <view class="Row" style='border-bottom:none' bindtap='ShowDetail' data-type="8">
+    <view class="RowLeft"><image src="/images/mine8.png"></image><text>我的客户</text></view>
+    <view class="RowRight" ><image src="/images/more.png"></image><text>查看我收藏的名片</text></view>
+  </view>
+
+  <view class="Line"></view>
+
+  <view class="Row"  bindtap='ShowDetail' data-type="9">
+    <view class="RowLeft"><image src="/images/mine9.png"></image><text>产品管理</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>编辑、发布产品信息</text></view>
+  </view>
+  <view class="Row"  bindtap='ShowDetail' data-type="10">
+    <view class="RowLeft"><image src="/images/mine10.png"></image><text>采购管理</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>编辑、发布采购信息</text></view>
+  </view>
+  <view class="Row" bindtap='ShowDetail' data-type="11">
+    <view class="RowLeft"><image src="/images/mine11.png"></image><text>公司信息</text></view>
+    <view class="RowRight" ><image src="/images/more.png"></image><text>编辑公司信息</text></view>
+  </view>
+  <view class="Row" bindtap='ShowDetail' data-type="12">
+    <view class="RowLeft"><image src="/images/mine12.png"></image><text>公司业绩</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>编辑公司业绩</text></view>
+  </view>
+  <view class="Row" style='border-bottom:none' bindtap='ShowDetail' data-type="13">
+    <view class="RowLeft"><image src="/images/mine13.png"></image><text>荣誉证书</text></view>
+    <view class="RowRight"><image src="/images/more.png"></image><text>上传荣誉证书</text></view>
+  </view>
+
+  <view class="Line"></view>
+
+  <view class="Row" style='border-bottom:none'  >
+    <button open-type="contact" class='contacButton'>
+      <view class="RowLeft"><image src="/images/mine14.png"></image><text>联系客服</text></view>
+      <view class="RowRight">
+      <image src="/images/more.png"></image><text>反馈意见</text>
+      </view>
+    </button>
+  </view>
+  
+   <view class="RowOutLogin"  bindtap='Clear'>
+    <view class="RowLeft" style="font-size:34rpx">退出登录</view>
+  </view>
+
+  <view class="Line"></view>
+  <view class="Line"></view>
+  <view class="Line"></view>
+
+</view>

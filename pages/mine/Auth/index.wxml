@@ -1,0 +1,84 @@
+<!--pages/mine/Auth/index.wxml-->
+<view class="Top"></view>
+<view class="Mp">
+  <image src="/images/mpimg.png"></image>
+  <view class="MpName">{{info.nickname}} <text space="nbsp">   您好！</text></view>
+  <view class="MpCompany">{{info.company}}</view>
+  <view class="MpLevel" wx:if="{{info.level_id == 1}}">
+    <view class="Active">未认证会员</view>
+    <view>认证会员</view>
+    <view>常务委员</view>
+    <view>主任委员</view>
+  </view>
+  <view class="MpLevel" wx:if="{{info.level_id == 2}}">
+    <view class="Active">未认证会员</view>
+    <view class="Active">认证会员</view>
+    <view>常务委员</view>
+    <view>主任委员</view>
+  </view>
+  <view class="MpLevel" wx:if="{{info.level_id == 3}}">
+    <view class="Active">未认证会员</view>
+    <view class="Active">认证会员</view>
+    <view class="Active">常务委员</view>
+    <view>主任委员</view>
+  </view>
+  <view class="MpLevel" wx:if="{{info.level_id == 4}}">
+    <view class="Active">未认证会员</view>
+    <view class="Active">认证会员</view>
+    <view class="Active">常务委员</view>
+    <view class="Active">主任委员</view>
+  </view>
+</view>
+
+<view class="QxBox"  wx:if="{{info.level_id == 1}}">
+  <button open-type="contact" class='QxUp'>立即升级，享更多权益</button>
+  <view class="QxShow"><image src="/images/q1.png"></image><view>发布产品信息</view></view>
+  <view class="QxShow"><image src="/images/q2.png"></image><view>发布采购信息</view></view>
+  <view class="QxShow"><image src="/images/q3.png"></image><view>会员标识</view></view>
+  <view class="QxShow"><image src="/images/q4.png"></image><view>排序优先级</view></view>
+  <view class="QxShow"><image src="/images/q5.png"></image><view>企业联系方式</view></view>
+  <view class="QxShow"><image src="/images/q6.png"></image><view>企业宣传报道</view></view>
+  <view class="QxShow"><image src="/images/q7y.png"></image><view>查看产品信息</view></view>
+  <view class="QxShow"><image src="/images/q8.png"></image><view>查看采购信息</view></view>
+  <view class="QxShow"><image src="/images/q9.png"></image><view>专属商务对接</view></view>
+  <view class="QxShow"><image src="/images/q10.png"></image><view>品牌推荐展示</view></view>
+</view>
+<view class="QxBox"  wx:if="{{info.level_id == 2}}">
+  <button open-type="contact" class='QxUp'>立即升级，享更多权益</button>
+  <view class="QxShow"><image src="/images/q1y.png"></image><view>发布产品信息</view></view>
+  <view class="QxShow"><image src="/images/q2y.png"></image><view>发布采购信息</view></view>
+  <view class="QxShow"><image src="/images/q3y.png"></image><view>会员标识</view></view>
+  <view class="QxShow"><image src="/images/q4.png"></image><view>排序优先级</view></view>
+  <view class="QxShow"><image src="/images/q5.png"></image><view>企业联系方式</view></view>
+  <view class="QxShow"><image src="/images/q6.png"></image><view>企业宣传报道</view></view>
+  <view class="QxShow"><image src="/images/q7y.png"></image><view>查看产品信息</view></view>
+  <view class="QxShow"><image src="/images/q8.png"></image><view>查看采购信息</view></view>
+  <view class="QxShow"><image src="/images/q9.png"></image><view>专属商务对接</view></view>
+  <view class="QxShow"><image src="/images/q10.png"></image><view>品牌推荐展示</view></view>
+</view>
+<view class="QxBox"  wx:if="{{info.level_id == 3}}">
+  <button open-type="contact" class='QxUp'>立即升级，享更多权益</button>
+  <view class="QxShow"><image src="/images/q1y.png"></image><view>发布产品信息</view></view>
+  <view class="QxShow"><image src="/images/q2y.png"></image><view>发布采购信息</view></view>
+  <view class="QxShow"><image src="/images/q3y.png"></image><view>会员标识</view></view>
+  <view class="QxShow"><image src="/images/q4y.png"></image><view>排序优先级</view></view>
+  <view class="QxShow"><image src="/images/q5y.png"></image><view>企业联系方式</view></view>
+  <view class="QxShow"><image src="/images/q6y.png"></image><view>企业宣传报道</view></view>
+  <view class="QxShow"><image src="/images/q7y.png"></image><view>查看产品信息</view></view>
+  <view class="QxShow"><image src="/images/q8.png"></image><view>查看采购信息</view></view>
+  <view class="QxShow"><image src="/images/q9.png"></image><view>专属商务对接</view></view>
+  <view class="QxShow"><image src="/images/q10y.png"></image><view>品牌推荐展示</view></view>
+</view>
+<view class="QxBox"  wx:if="{{info.level_id == 4}}">
+  <button open-type="contact" class='QxUp'>立即升级，享更多权益</button>
+  <view class="QxShow"><image src="/images/q1y.png"></image><view>发布产品信息</view></view>
+  <view class="QxShow"><image src="/images/q2y.png"></image><view>发布采购信息</view></view>
+  <view class="QxShow"><image src="/images/q3y.png"></image><view>会员标识</view></view>
+  <view class="QxShow"><image src="/images/q4y.png"></image><view>排序优先级</view></view>
+  <view class="QxShow"><image src="/images/q5y.png"></image><view>企业联系方式</view></view>
+  <view class="QxShow"><image src="/images/q6y.png"></image><view>企业宣传报道</view></view>
+  <view class="QxShow"><image src="/images/q7y.png"></image><view>查看产品信息</view></view>
+  <view class="QxShow"><image src="/images/q8y.png"></image><view>查看采购信息</view></view>
+  <view class="QxShow"><image src="/images/q9y.png"></image><view>专属商务对接</view></view>
+  <view class="QxShow"><image src="/images/q10y.png"></image><view>品牌推荐展示</view></view>
+</view>

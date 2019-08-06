@@ -1,0 +1,19 @@
+<!--pages/mine/Article/index.wxml-->
+<view class="container">
+
+  <view class="List" wx:for="{{ArticleList}}">
+    <view class="ListLeft"><image src="{{item.thumb}}"></image></view>
+    <view class="ListRight">
+      <view class="RightTitle">{{item.title}}</view>
+      <view class="RightStatus" wx:if="{{item.status == 1}}">已发布</view>
+      <view class="RightStatus" wx:if="{{item.status == 2}}">待审核</view>
+      <view class="RightStatus" wx:if="{{item.status == 3}}">审核不通过</view>
+      <view class="RightDel" bindtap='DelData' data-id="{{item.id}}">删除</view>
+      <view class="RightEdit" bindtap='EditData' data-id="{{item.id}}">编辑</view>
+    </view>
+  </view>
+
+  <view class="Xian"></view>
+  <view class="AddButton" bindtap='AddArticle' > <view><image src="/images/add.png"></image>新增采购</view></view>
+
+</view>

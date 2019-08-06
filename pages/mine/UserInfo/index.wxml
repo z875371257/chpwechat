@@ -1,0 +1,34 @@
+<view class="container">
+  <!-- <view class="Row" style='height:120rpx;line-height:120rpx;'>
+    <view class="RowLeft">头像</view>
+    <view class="RowRight"><view class="UserAvatar"><image src="{{info.headimg}}"></image></view></view>
+  </view> -->
+  <!-- <view class="Row">
+    <view class="RowLeft">用户名</view>
+    <view class="RowRight Jts">{{info.name}}</view>
+  </view> -->
+  <view class="Row">
+    <view class="RowLeft">真实姓名</view>
+    <view class="RowRight Jts">{{info.nickname}}</view>
+  </view>
+  <view class="Row">
+    <view class="RowLeft">手机号</view>
+    <image src='/images/jt.png' class="Jt" bindtap="EditTel"></image>
+    <view class="RowRight" bindtap="EditTel">{{info.mobile}}</view>
+  </view>
+  <view class="Row">
+    <view class="RowLeft" >邮箱</view>
+    <image src='/images/jt.png' class="Jt" bindtap="EditEmail"></image>
+    <view class="RowRight" bindtap="EditEmail">{{info.email}}</view>
+  </view>
+  <view class="Row">
+    <view class="RowLeft">职务</view>
+    <image src='/images/jt.png' class="Jt" bindtap="EditPosts"></image>
+    <view class="RowRight" bindtap="EditPosts">{{info.posts}}</view>
+  </view>
+  <view class="Row">
+    <view class="RowLeft">所在公司</view>
+    <view class="RowRight Jts">{{info.company}}</view>
+  </view>
+
+</view>

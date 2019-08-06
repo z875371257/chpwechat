@@ -1,0 +1,35 @@
+/* pages/company/index.wxss */
+.container{background: #FFF;}
+/* 城市选择 */
+.city-box{z-index: 99;background: #FFF;width:100%;border-top:2rpx solid #EEE;margin-top:-2rpx;}
+.city-list{width: 680rpx;margin:20rpx auto; }
+.city-list view{display: inline-block;font-size:30rpx;text-align: center;vertical-align:top;padding:10rpx 26rpx;background: #EEE;border-radius: 10rpx;margin:10rpx 20rpx 10rpx 0rpx;color:#999;border:2rpx solid #FFF;}
+.cityactive{ background:#FCEDE6 !important;border:2rpx solid #E65617 !important;color:#E65617 !important;}
+
+/* 公司列表 */
+.company-li{ height:150rpx;border-bottom:2rpx solid #EEE;width:680rpx; margin:37rpx auto 0;}
+.li-thumb{width:185rpx;float: left;height:113rpx;position: relative;}
+.company-thumb{width:150rpx;height:113rpx;position:absolute;border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;top:0;left:35rpx;}
+
+.wrz-company-thumb{width:150rpx;height:113rpx;margin: auto;}
+.company-level{width:50rpx; height:100%;display: inline-block;font-size:20rpx;line-height:20rpx;position: relative;}
+.company-level image{width:32rpx;height:26rpx;position: absolute;}
+.company-level text{position: absolute;top:28rpx;color:#FFF;left:6rpx;}
+.li-title{float: left;width:366rpx;height: 116rpx;padding-left:20rpx;overflow: hidden;}
+.company-name{height:40rpx;width:100%;overflow: hidden;font-size:30rpx;}
+.company-yw{color:#999;font-size:26rpx;height:76rpx;overflow: hidden;margin-top:4rpx;}
+.company-yw view{display:inline-block; padding-right:20rpx;}
+.index-news2{width:100%;height:190rpx;background: #F9F9F9;}
+.li-card{float:right;padding-left:20rpx;font-size:26rpx;color:#3A99EB;width:80rpx;margin-top:12rpx;text-align: center}
+.li-card image{width:50rpx;height:50rpx;margin:auto}
+/* 没有数据时 */
+.NotCom{width:100%;text-align: center;font-size:28rpx;padding:40rpx 0;color:#999}
+
+/* 查看名片 */
+.ShowCard{width:680rpx}
+#CardBox{background: #FFF;z-index: 111;position: fixed;top:180rpx;}
+.Cz{position: fixed;z-index: 111;top:680rpx;}
+.Cz view{float:left;margin-left:100rpx;background: #FFF;font-size:28rpx;padding:10rpx 20rpx;border-radius: 40rpx;}
+.Cz view image{width:34rpx;height:34rpx;float:left;margin-top:2rpx;}
+.close{width:54rpx;height:54rpx;position: fixed;top:880rpx;z-index: 111;left:346rpx;}
+.close image{width:100%;height:100%;}

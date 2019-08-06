@@ -1,0 +1,219 @@
+<!--index.wxml-->
+<view class="container">
+
+    <!-- 查看名片遮盖框 -->
+    <view class="cover" catchtouchmove="move" hidden="{{CardShow}}" bindtap='Close'></view>
+    <view class="ShowCard" hidden="{{CardShow}}" catchtouchmove="move">
+      <view id="CardBox">
+        <view class="Level bred" wx:if="{{card.level_id == 4}}">
+          <image src="/images/crown.png"></image>
+          <text>主任委员</text>
+        </view>
+        <view class="Level byellow" wx:if="{{card.level_id == 3}}">
+          <image src="/images/crown.png"></image>
+          <text>常务委员</text>
+        </view>
+        <view class="Level bgray" wx:if="{{card.level_id == 2}}">
+          <image src="/images/crown.png"></image>
+          <text>认证会员</text>
+        </view>
+        <image src="/images/Bigcard.png" class="CardImg"></image>
+        <view class="Info">
+          <view class="InfoName">{{card.nickname}}</view>
+          <view class="InfoPosts">{{card.posts}}</view>
+        </view>
+        <view class="ComInfo">
+          <view class="ComTel" bindtap='CallTel' data-tel="{{card.mobile}}">
+            <image src="/images/tel.png"></image>
+            {{card.mobile}}
+          </view>
+          <view class="ComName" bindtap='CompanyShow' data-id="{{card.id}}">
+            <image src="/images/com.png"></image>
+            {{card.name}}
+          </view>
+          <view class="ComAddress">
+            <image src="/images/address.png"></image>
+            {{card.address}}
+          </view>
+        </view>
+
+      </view>
+      <view class="Cz">
+        <view  bindtap='CompanyShow' data-id="{{card.company_id}}"> <image src="/images/gs.png"></image> 查看公司</view>
+        <view  bindtap='CollectSave' data-id="{{card.id}}" wx:if="{{collect}}"> <image src="/images/sc.png"></image>收藏名片</view>
+        <view style='color:#3A99EB' wx:else bindtap='CollectDel' data-id="{{card.id}}"> <image src="/images/ysc.png"></image>收藏名片</view>
+      </view>
+      <view class="close" bindtap='Close'>
+      <image src="/images/x.png"></image>
+      </view>
+    </view>
+
+    <!-- 未注册打开弹框 -->
+    <view class="covers" catchtouchmove="move" hidden="{{Pop}}" bindtap='Closes'></view>
+    <view class="ShowPop" hidden="{{Pop}}" catchtouchmove="move">
+      <view class="PopImage" bindtap="ShowRegister"><image src="{{data.Adver}}"></image></view>
+      <view class="close" bindtap='Closes'>
+      <image src="/images/x.png"></image>
+      </view>
+    </view>
+    
+
+    <!-- Banner -->
+    <view class="head-image">
+        <image class="imgs" src="/images/banner.jpg" >
+        </image>
+    </view>
+
+    <!-- 采购轮播 -->
+    <view class="index-news">
+      <swiper class="ROll-Swipers" autoplay="false" interval="3000" duration="1500" circular="true" indicator-dots="true" indicator-color="rgba(230,86,23, .3)" indicator-active-color="#E65617">
+        <block wx:for="{{data.NewsArticle}}">
+          <swiper-item>
+            <view class='index-news-slide' bindtap="ChpArticleShow" data-id="{{item.id}}">
+              <image src="{{item.thumb}}" />
+              <view class="index-news-tit">{{item.title}}</view>
+            </view>
+          </swiper-item>
+        </block>
+
+      </swiper>
+    </view>
+
+    <!-- 平台会员 -->
+    <view class="index-member">
+        <view class="index-member-tit">
+            <view class="member-tit-left"> 平台会员</view>
+            <view class="member-tit-more" bindtap='CompanyMore'>更多<image src='/images/more.png'></image></view>
+        </view>
+        <view class="scroll-box">
+            <scroll-view class="member-scroll" scroll-x>
+                <block wx:for="{{data.PcVip}}">
+                <!-- 超级会员 -->
+                <view class="new-img rimred" wx:if="{{item.level_id == 4}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                    <view class='slide-crown bred'><image src="/images/crown.png"></image></view>
+                    <image  id="" src="{{item.thumb}}" class="a-imgs"></image>
+                </view>
+
+                <!-- 精选会员 -->
+                <view class="new-img rimyellow" wx:if="{{item.level_id == 3}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                    <view class='slide-crown byellow'><image src="/images/crown.png"></image></view>
+                    <image  id="" src="{{item.thumb}}" class="a-imgs"></image>
+                </view>
+
+                <!--认证会员 -->
+                <view class="new-img rimgray" wx:if="{{item.level_id == 2}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                    <view class='slide-crown bgray'><image src="/images/crown.png"></image></view>
+                    <image  id="" src="{{item.thumb}}" class="a-imgs"></image>
+                </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+
+    <!--（全国）公司列表 -->
+    <view class="index-compnay-list">
+      <view class="index-company-tit">
+        <view class="member-tit-left"> 入驻企业</view>
+        <view class="index-company-more" bindtap='CompanyMore'>更多<image src='/images/more.png'></image></view>
+        <view class="clear"></view>
+      </view>
+
+      <!-- 公司列表 -->
+      <view class="company-ul">
+          <block wx:for="{{data.Company}}" wx:for-index="idx" wx:if="{{idx<5}}">
+            <view class="company-li">
+
+                <view class="li-thumb rimred" wx:if="{{item.level_id == 4}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                  <view class="company-level bred" >
+                    <image src="/images/crown.png"></image>
+                    <text>主\n任\n委\n员</text>
+                  </view>
+                  <image src="{{ item.thumb }}" class="company-thumb"></image>
+                </view>
+
+                <view class="li-thumb rimyellow" wx:if="{{item.level_id == 3}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                  <view class="company-level byellow" >
+                    <image src="/images/crown.png"></image>
+                    <text>常\n务\n委\n员</text>
+                  </view>
+                  <image src="{{ item.thumb }}" class="company-thumb"></image>
+                </view>
+
+                <view class="li-thumb rimgray" wx:if="{{item.level_id == 2}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                  <view class="company-level bgray" >
+                    <image src="/images/crown.png"></image>
+                    <text>认\n证\n会\n员</text>
+                  </view>
+                  <image src="{{ item.thumb }}" class="company-thumb"></image>
+                </view>
+                <view class="li-title"  bindtap="CompanyShow" data-id="{{item.id}}"> 
+                    <view class="company-name">{{item.name}}</view> 
+                    <view class="company-yw"><view wx:for="{{item.product}}" wx:for-item="vv">{{vv.name}}</view>  </view> 
+                </view>
+                <view class="li-card" bindtap='ViewCard' data-id="{{item.user_id}}"><image src="/images/card.png"></image>看名片</view>
+            </view>
+          </block>
+      </view>
+
+      <!-- 采购轮播 -->
+      <view class="index-news2" wx:if="{{ data.NewsArticle2 != ''}}">
+        <swiper class="ROll-Swipers" autoplay="false" interval="3000" duration="1500" circular="true" indicator-dots="true" indicator-color="rgba(230,86,23, .3)" indicator-active-color="#E65617">
+          <block wx:for="{{data.NewsArticle2}}">
+            <swiper-item>
+              <view class='index-news-slide'>
+                <image src="{{item.thumb}}" />
+                <view class="index-news-tit" bindtap='ArticleShow' data-id="{{item.id}}">{{item.title}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+
+      <!-- 公司列表 -->
+      <view class="company-ul">
+
+          <block wx:for="{{data.Company}}" wx:for-index="idx" wx:if="{{idx>5}}">
+            <view class="company-li">
+
+                <view class="li-thumb rimred" wx:if="{{item.level_id == 4}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                  <view class="company-level bred" >
+                    <image src="/images/crown.png"></image>
+                    <text>主\n任\n委\n员</text>
+                  </view>
+                  <image src="{{ item.thumb }}" class="company-thumb"></image>
+                </view>
+
+                <view class="li-thumb rimyellow" wx:if="{{item.level_id == 3}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                  <view class="company-level byellow" >
+                    <image src="/images/crown.png"></image>
+                    <text>常\n务\n委\n员</text>
+                  </view>
+                  <image src="{{ item.thumb }}" class="company-thumb"></image>
+                </view>
+
+                <view class="li-thumb rimgray" wx:if="{{item.level_id == 2}}" bindtap="CompanyShow" data-id="{{item.id}}">
+                  <view class="company-level bgray" >
+                    <image src="/images/crown.png"></image>
+                    <text>认\n证\n会\n员</text>
+                  </view>
+                  <image src="{{ item.thumb }}" class="company-thumb"></image>
+                </view>
+                
+                <view class="li-title"  bindtap="CompanyShow" data-id="{{item.id}}"> 
+                    <view class="company-name">{{item.name}}</view> 
+                    <view class="company-yw"><view wx:for="{{item.product}}" wx:for-item="vv">{{vv.name}}</view>  </view> 
+                </view>
+                <view class="li-card" bindtap='ViewCard' data-id="{{item.user_id}}"><image src="/images/card.png"></image>看名片</view>
+            </view>
+          </block>
+
+          <view class="more-box">
+            <view class="more" bindtap='CompanyMore'>查看更多<image src="/images/morebottom.png"></image></view>
+          </view>
+          
+      </view>
+
+    </view>
+
+    
+</view>

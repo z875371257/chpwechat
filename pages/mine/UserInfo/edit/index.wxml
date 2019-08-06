@@ -1,0 +1,28 @@
+<view class="container">
+
+  <form bindsubmit="RegisterForm">
+
+    <view class="Row">
+      <view class="RowLeft">原手机号</view>
+      <view class="RowRight">{{info.mobile}}</view>
+    </view>
+
+    <view class="Row">
+      <view class="RowLeft">新手机号</view>
+      <view class="RowRight">
+        <input type='number'  name="tel" value='{{mobile}}' placeholder='11位手机号码' bindblur="MobileInput"></input>
+      </view>
+    </view>
+
+    <view class="Row">
+      <view class="RowLeft">验证码</view>
+      <view class="RowRight">
+        <input type='number' maxlength="6" name="code" placeholder='6位短信验证码' style='margin-right:200rpx;'></input>
+         <view class="SendCode" bindtap="GetCode" >{{SendView}}</view>
+        </view>
+    </view>
+
+    <button class="SaveInfo" form-type='submit'>保存</button>
+  </form>
+
+</view>

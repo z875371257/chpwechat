@@ -1,0 +1,14 @@
+/* pages/mine/Product/index.wxss */
+.container{background: #FFF}
+.List{width:680rpx;height:160rpx;padding:30rpx 0;background: #FFF;margin:auto;border-bottom: 2rpx solid #EEE;}
+.ListLeft{float:left;width:210rpx;}
+.ListLeft image{width: 100%;height:158rpx;}
+.ListRight{float:left;padding-left:30rpx;width: 440rpx;}
+.ListRight .RightTitle{font-size:32rpx;width: 100%;height:80rpx;overflow: hidden;}
+.RightStatus{float:left;margin-top:30rpx;font-size:26rpx;height:40rpx;line-height: 40rpx;color:#999}
+.RightEdit{float:right;margin-top:30rpx;font-size: 28rpx;width:100rpx;height: 40rpx;line-height: 40rpx;background: #E65617;color:#FFF;text-align: center;margin-right: 30rpx;border-radius: 40rpx;}
+.RightDel{float:right;margin-top:30rpx;font-size: 28rpx;width:100rpx;height: 40rpx;line-height: 40rpx;background: #CCC;color:#FFF;text-align: center;border-radius: 40rpx;}
+.Xian{height:40rpx;background: #F9F9F9;width: 100%;}
+.AddButton{background: #FFF;width:100%;height:100rpx;font-size:32rpx;color:#4A9FE8;}
+.AddButton image{width:34rpx;height:34rpx;float:left;margin-top:33rpx;}
+.AddButton view{margin:auto;width: 180rpx;text-align: center;height:100rpx;line-height: 100rpx; }

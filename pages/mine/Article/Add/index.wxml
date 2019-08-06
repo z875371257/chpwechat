@@ -1,0 +1,38 @@
+<!--pages/mine/Article/Add/index.wxml-->
+<view class="container">
+  <form  bindsubmit="SaveForm">
+    <view class="Row" style='height:120rpx;line-height:120rpx;'>
+      <view class="RowLeft">封面图</view>
+      <view class="RowRight">
+        <view class="Sc" bindtap='ChangeThumb' >上传</view>
+        <view class="RowThumb"><image src="{{Thumb}}" bindtap='ViewImage' data-url="{{Thumb}}"></image></view>
+      </view>
+    </view>
+
+    <view class="Row">
+      <view class="RowLeft">采购标题</view>
+      <view class="RowRight"><input type="text" name="title"></input></view>
+    </view>
+
+    <view class="Row">
+      <view class="RowLeft">采购产品</view>
+      <view class="RowRight"><input type="text" name="pname"></input></view>
+    </view>
+
+    <input type='text' name="thumb" value='{{ThumbData}}' style='display:none'></input>
+    <input type='text' name="id" value='0'  style='display:none'></input>
+    <input type='text' name="user_id" value='{{info.id}}'  style='display:none'></input>
+    <input type='text' name="company_id" value='{{info.company_id}}'  style='display:none'></input>
+    <input type='text' name="city" value='{{info.city}}'  style='display:none'></input>
+
+    <!-- <view class="Row" style='height:400rpx;line-height:40rpx;'>
+      <view class="RowLeft" >详情介绍</view>
+      <view class="RowRight" style='height:360rpx;' > <textarea maxlength="-1" name="content"></textarea> </view>
+    </view> -->
+    <view class="Error">小程序暂不支持采购详情填写</view>
+    
+    <button class="SaveInfo" form-type='submit'>保存</button>
+
+  </form>
+
+</view>

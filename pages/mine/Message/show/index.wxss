@@ -1,0 +1,16 @@
+/* pages/mine/Message/show/index.wxss */
+@import '../../../../wxParser/index.wxss';
+
+.ArticleBox{background: #FFF;width:100%;}
+.ArticleTitle{width:690rpx;margin:auto;font-size:40rpx; padding:20rpx 0;}
+.ArticleDes{width:690rpx;margin:auto;font-size:28rpx;color:#999;height:40rpx;}
+.ArticleFrom{float:left;}
+.ArticleTime{float:right;}
+.ArticleContent{word-wrap:break-word;width:690rpx;margin:auto; padding:30rpx 0;}
+
+.Related{background: #FFF;width:100%;margin-top:20rpx;padding-bottom: 10rpx;}
+.RelatedTitle{width:690rpx;margin: auto;text-align: left;font-size:36rpx;color:#E65617;padding:40rpx 0;}
+.RelatedList{width:690rpx;margin:0 auto 30rpx;height:120rpx;font-size:30rpx;}
+.ListLeft{width:150rpx;float:left;}
+.ListLeft image{width:150rpx;height: 113rpx;}
+.ListRight{width:510rpx;height: 114rpx;float:left;padding-left:30rpx;line-height:44rpx;padding-top:10rpx;height:90rpx;overflow: hidden}

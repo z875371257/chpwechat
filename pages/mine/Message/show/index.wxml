@@ -1,0 +1,12 @@
+<!--pages/mine/Message/show/index.wxml-->
+<import src="../../../../wxParser/index.wxml"/>
+
+<view class="ArticleBox">
+  <view class="ArticleTitle">{{show.title}}</view>
+  <view class="ArticleDes">
+    <view class="ArticleTime">{{show.create_time}}</view>
+  </view>
+  <view class="ArticleContent">
+   <template is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+/* pages/mine/Auth/index.wxss */
+page{background: #F9F9F9}
+.Top{width: 100%;height: 200rpx;background: #E65617;}
+.Mp{width:676rpx;margin:auto;height:320rpx;position: relative;box-shadow: 0px 2rpx 15rpx rgba(0,0,0,0.2);}
+.Mp image{width:100%;height: 100%;margin-top:-165rpx;border-radius: 10rpx;}
+.MpName{position: absolute;top:60rpx;left: 70rpx;font-size:36rpx;color: #E65617;}
+.MpName text{color:#000}
+.MpCompany{position: absolute;top:120rpx;left:70rpx;font-size:30rpx;}
+.MpLevel{position: absolute;top:240rpx;left:36rpx;font-size:28rpx;}
+.MpLevel view{display: inline-block;position: relative;width:150rpx;text-align: center;color:#999;}
+.MpLevel view::after{position: absolute;content:'';width:20rpx;background: #999999;height:20rpx;top:-40rpx;left:50rpx;border-radius: 50%;border:6rpx solid #E0E0E0;}
+.MpLevel view::before{position: absolute;content:''; height: 4rpx; background: #999999;width: 120rpx;left:80rpx;top:-28rpx;}
+.MpLevel view:nth-child(4)::before{width:0rpx;}
+.MpLevel .Active{color:#E65617;}
+.MpLevel .Active::after{background:#E65617;border: 6rpx solid #F8CBB8;}
+.MpLevel .Active::before{background:#E65617;}
+
+.QxBox{width:676rpx;margin:auto;height:1000rpx;border:2rpx solid #E65617;margin-top:80rpx;border-radius: 10rpx;margin-bottom: 80rpx;box-shadow: 0px 2px 15px rgba(230,86,23,0.2);}
+.QxUp{width:350rpx;margin:auto;height:76rpx;line-height: 76rpx;border-radius: 40rpx;background: #E65617;color:#FFF;box-shadow: 0px 2px 15px rgba(230,86,23,0.2);font-size:28rpx;margin-top:-38rpx;}
+.QxUp::after{border:none;}
+.QxShow{width:50%;height:180rpx;display: inline-block;text-align: center;font-size: 28rpx;margin-top:14rpx;}
+.QxShow image{width:90rpx;height: 100rpx;margin:10rpx auto;}

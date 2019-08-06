@@ -1,0 +1,8 @@
+<!--pages/mine/Client/index.wxml-->
+<view class="ClientBox"> 
+<view class="ClientList" wx:for="{{list}}">
+  <view class="ClientName" bindtap='ShowUserCard' data-id="{{item.collect_id}}">{{item.nickname}}</view>
+  <view class="ClientPosts">{{item.posts}} | {{item.company}}</view>
+  <view class="ClientDel" bindtap='DelData' data-id="{{item.id}}">删除</view>
+</view>
+</view> 

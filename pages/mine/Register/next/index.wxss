@@ -1,0 +1,16 @@
+/* pages/mine/Register/next/index.wxss */
+page{background: #F9F9F9;}
+.Row{width:750rpx;padding:20rpx 0;border-bottom:2rpx solid #EEE;height:80rpx;line-height: 80rpx;background: #FFF;}
+.RowLeft{ font-size:30rpx; margin-left:35rpx; float: left;width:150rpx;}
+.RowRight{float:right;font-size: 28rpx;color:#999;margin-right:35rpx;width: 480rpx;text-align: right;position: relative;}
+.logo{width:80rpx;height:80rpx;float:right;background: #F9F9F9;}
+.RowRight input{heigth:60rpx;line-break: 60rpx;margin-top:10rpx;}
+.RowRight textarea{width: 480rpx;}
+.EditUserInfo{margin-top:40rpx;background: #FFF;width:100%;height:100rpx;font-size:32rpx;color:#3A99EB;}
+.EditUserInfo image{width:34rpx;height:34rpx;float:left;margin-top:33rpx;}
+.EditUserInfo view{margin:auto;width: 240rpx;text-align: center;height:100rpx;line-height: 100rpx; }
+
+.SaveInfo{width:600rpx;margin:70rpx auto;height:80rpx;line-height: 80rpx;background:#3A99EB;color:#FFF; text-align: center;}
+.select{width:32rpx;height:32rpx;position: absolute;top:24rpx;right: 0;}
+.picker{padding-right: 30rpx;}
+.city{width:24rpx;height:30rpx;position: absolute;top:24rpx;right: 0;z-index: 999}

@@ -1,0 +1,28 @@
+<!--pages/mine/Performance/Add/index.wxml-->
+<view class="container">
+  <form  bindsubmit="SaveForm">
+
+    <view class="Row">
+      <view class="RowLeft">时间</view>
+      <view class="RowRight"><picker mode="date" value="{{date}}" start=""  end=""  bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+    </view>
+    </view>
+
+    <input type='text' name="id" value='0'  style='display:none'></input>
+    <input type='text' name="publish_time" value='{{date}}'  style='display:none'></input>
+    <input type='text' name="company" value='{{company}}'  style='display:none'></input>
+
+    <view class="Row" style='height:300rpx;line-height:40rpx;'>
+      <view class="RowLeft" >业绩详情</view>
+      <view class="RowRight" style='height:260rpx;' > <textarea maxlength="-1" name="description"></textarea> </view>
+    </view>
+    
+    <button class="SaveInfo" form-type='submit'>保存</button>
+
+  </form>
+
+</view>

@@ -1,0 +1,42 @@
+<view class="container">
+  <form  bindsubmit="SaveForm">
+    <view class="Row" style='height:120rpx;line-height:120rpx;'>
+      <view class="RowLeft">产品图片</view>
+      <view class="RowRight">
+        <view class="Sc" bindtap='ChangeThumb' >上传</view>
+        <view class="RowThumb"><image src="{{Thumb}}" bindtap='ViewImage' data-url="{{Thumb}}"></image></view>
+        <input type='text' name="thumb" value='{{ThumbData}}' style='display:none'></input>
+        <input type='text' name="id" value='{{show.id}}'  style='display:none'></input>
+      </view>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">产品名称</view>
+      <view class="RowRight"><input type="text" name="name" value='{{show.name}}'></input></view>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">价格</view>
+      <view class="RowRight"><input type="text" name="price" value='{{show.price}}'></input></view>
+    </view>
+    
+    <view class="Row">
+      <view class="RowLeft">所属类目</view>
+
+      <view class="RowRight" bindtap="EditTel">
+        <picker mode="multiSelector" bindchange="bindRegionChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}"  >
+          <view class="picker" >{{multiArray[0][multiIndex[0]]}} / {{multiArray[1][multiIndex[1]]}} / {{multiArray[2][multiIndex[2]]}}</view>
+          <image src="/images/select.png" class="select"></image>
+        </picker>
+      </view>
+      <input type='text' name="cate_id" value='{{cate_id}}' style='display:none'></input>
+    </view>
+
+    <!-- <view class="Row" style='height:200rpx;line-height:40rpx;'>
+      <view class="RowLeft" >详情介绍</view>
+      <view class="RowRight" style='height:180rpx;' > <textarea maxlength="-1" name="content"></textarea> </view>
+    </view> -->
+    <view class="Error">小程序暂不支持产品详情填写</view>
+    <button class="SaveInfo" form-type='submit'>保存</button>
+
+  </form>
+
+</view>

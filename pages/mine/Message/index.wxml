@@ -1,0 +1,21 @@
+<!--pages/mine/Message/index.wxml-->
+<block wx:for="{{message}}" >
+  <view class="Message1" wx:if="{{item.type==0}}">
+    <view class="MessageTitle unread" wx:if="{{item.status == 0}}"  bindtap='ShowMessage' data-id="{{item.id}}">{{item.title}}</view>
+    <view class="MessageTitle" wx:else  bindtap='ShowMessage' data-id="{{item.id}}">{{item.title}}</view>
+    <view class="MessageTime">{{item.create_time}}</view>
+    <view class="MessageDel" bindtap="MessageDel" data-id="{{item.id}}">删除</view>
+    <view class="MessageDel" bindtap='ShowMessage' data-id="{{item.id}}">查看详情</view>
+  </view>
+
+   <view class="Message2"  wx:if="{{item.type==1}}">
+    <view class="MessageTitle">{{item.user_name}}（{{item.user_posts}}）申请加入公司</view>
+    <view class="MessageDes">{{item.user_name}}（{{item.user_posts}}）申请加入公司，是否确认通过！</view>
+    <view class="MessageTime">{{item.create_time}}</view>
+    <view class="MessageDel" bindtap="MessageDel" data-id="{{item.id}}">删除</view>
+    <view class="MessageDel" wx:if="{{item.status == 1}}" style="color:#999">已同意</view>
+    <view class="MessageDel" wx:if="{{item.status == 2}}" style="color:#999">已拒绝</view>
+    <view class="MessageDel" wx:if="{{item.status == 0}}" style="color:red"  bindtap='MessageStatus' data-id="{{item.id}}" data-status="2" data-type="1">拒绝</view>
+    <view class="MessageDel" wx:if="{{item.status == 0}}" style="color:green"  bindtap='MessageStatus' data-id="{{item.id}}" data-status="1" data-type="1">通过</view>
+  </view>
+</block>

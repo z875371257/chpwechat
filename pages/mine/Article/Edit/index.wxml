@@ -1,0 +1,35 @@
+<!--pages/mine/Article/Edit/index.wxml-->
+<import src="../../../../wxParser/index.wxml"/>
+
+<view class="container">
+  <form  bindsubmit="SaveForm">
+    <view class="Row" style='height:120rpx;line-height:120rpx;'>
+      <view class="RowLeft">封面图</view>
+      <view class="RowRight">
+        <view class="Sc" bindtap='ChangeThumb' >上传</view>
+        <view class="RowThumb"><image src="{{Thumb}}" bindtap='ViewImage' data-url="{{Thumb}}"></image></view>
+        <input type='text' name="thumb" value='{{ThumbData}}' style='display:none'></input>
+        <input type='text' name="id" value='{{show.id}}'  style='display:none'></input>
+      </view>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">采购标题</view>
+      <view class="RowRight"><input type="text" name="title" value='{{show.title}}'></input></view>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">采购产品</view>
+      <view class="RowRight"><input type="text" name="pname" value='{{show.pname}}'></input></view>
+    </view>
+    
+    <!-- <view class="Row" style='height:380rpx;line-height:40rpx;'>
+      <view class="RowLeft" >详情介绍</view>
+      <view class="RowRight" style='height:360rpx;overflow:hidden;text-overflow:ellipsis;' > 
+        <template is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+      </view>
+    </view> -->
+    <view class="Error">小程序暂不支持采购详情填写</view>
+    <button class="SaveInfo" form-type='submit'>保存</button>
+
+  </form>
+
+</view>

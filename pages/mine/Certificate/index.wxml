@@ -1,0 +1,26 @@
+<!--pages/mine/Certificate/index.wxml-->
+<view class="container">
+
+  <view class="ListBox">
+    <block wx:for="{{ProductList}}" wx:for-index="idx">
+      <view class="List" wx:if="{{idx % 2 == 0}}" style='margin-left:0;'>
+        <image src="{{item.thumb}}"  bindtap='ViewImage' data-url="{{item.thumb}}"></image>
+        <view class="Del" bindtap="DelData" data-id="{{item.id}}">删除</view>
+        <view class="Status a" wx:if="{{item.status == 0}}">待审核</view>
+        <view class="Status b" wx:if="{{item.status == 1}}">已发布</view>
+        <view class="Status c" wx:if="{{item.status == 2}}">审核不通过</view>
+      </view>
+      <view class="List" wx:else >
+        <image src="{{item.thumb}}"  bindtap='ViewImage' data-url="{{item.thumb}}"></image>
+        <view class="Del" bindtap="DelData" data-id="{{item.id}}">删除</view>
+        <view class="Status a" wx:if="{{item.status == 0}}">待审核</view>
+        <view class="Status b" wx:if="{{item.status == 1}}">已发布</view>
+        <view class="Status c" wx:if="{{item.status == 2}}">审核不通过</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="Xian"></view>
+  <view class="AddButton" bindtap='AddProduct' > <view><image src="/images/add.png"></image>上传证书</view></view>
+
+</view>

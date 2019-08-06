@@ -1,0 +1,123 @@
+<import src="../../../wxParser/index.wxml"/>
+<view class="container">
+
+  <!-- 采购标题 -->
+  <view class='HeaderBox'>
+    <view class="show-title">
+      {{show.title}}
+    </view>
+    <view class="CreateTime">{{show.create_time}}</view>
+    <view class="Cz">
+    <button   open-type="share"  id="{{card.id}}"> 
+        <image src="/images/share.png"></image> 
+        分享
+    </button>
+    </view>
+  </view>
+  <!-- 采购公司信息 -->
+  <view class="show-company-box">
+    <view class="show-company">
+
+      <view class="show-company-thumb rimred" wx:if="{{show.level == 4}}">
+        <view class="show-company-level bred">
+          <image src="/images/crown.png"></image>
+          <text>主\n任\n委\n员</text>
+        </view>
+        <image src="{{ show.logo }}" class="company-thumbs"></image>
+      </view>
+
+      <view class="show-company-thumb rimyellow" wx:if="{{show.level == 3}}">
+        <view class="show-company-level byellow">
+          <image src="/images/crown.png"></image>
+          <text>常\n务\n委\n员</text>
+        </view>
+        <image src="{{ show.logo }}" class="company-thumbs"></image>
+      </view>
+
+      <view class="show-company-thumb rimgray" wx:if="{{show.level == 2}}">
+        <view class="show-company-level bgray">
+          <image src="/images/crown.png"></image>
+          <text>认\n证\n会\n员</text>
+        </view>
+        <image src="{{ show.logo }}" class="company-thumbs"></image>
+      </view>
+
+      <view class="show-company-thumb" wx:if="{{show.level == 1}}">
+        <image src="{{ show.logo }}" class="wrz-company-thumbs"></image>
+      </view>
+
+      <view class="li-title"> 
+            <view class="company-name">{{show.company}}</view>
+            <view class="company-xj">推荐星级 <image src="{{show.star}}"></image></view> 
+        </view>
+        <view class="li-card" bindtap='ShowCard' data-id="{{show.user_id}}"><image src="/images/card.png"></image>看名片</view>
+    </view>
+  </view>
+
+  <!-- 采购详情 -->
+  <view class="show-content">
+      <view class="show-content-title">采购详情</view>
+      <view class="msg1"  wx:if="{{MyLevel == 0}}">
+        <image src='/images/undefind.png'> </image>
+        <text class="error"  bindtap='Logins'>您暂无查询权限，请先登录</text><image  class="jt" src="/images/jt.png"  bindtap='Logins'>
+        </image>
+      </view>
+      <view class="msg1"  wx:if="{{MyLevel == 1}}">
+        <image src='/images/undefind.png'> </image>
+        <text class="error"  bindtap='CompanyRz'>您暂无查询权限，请完成企业认证</text><image  class="jt" src="/images/jt.png"  bindtap='CompanyRz'>
+        </image>
+      </view>
+
+      <template wx:if="{{MyLevel == 2}}" is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+      <template wx:if="{{MyLevel == 3}}" is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+      <template wx:if="{{MyLevel == 4}}" is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+  </view>
+  
+  <!-- 我要供货 -->
+  <view class="show-contact" bindtap='CanSupply'>我要供货</view>
+
+  <!-- 我要供货表单 -->
+  <view class="supply-model" hidden='{{ SupplyModel }}'>
+    <form bindsubmit="SupplyForm" >
+
+      <!-- 头部 -->
+      <view class="supply-header">
+        <view class="supply-close" bindtap='CanSupply'><image src="/images/close.png"></image></view>
+        <view class="supply-title">我要供货</view>
+        <view class="supply-description">提交供货意向，让采购方主动找你</view>
+      </view>
+
+      <!-- 表单部分 -->
+      <view class="supply-body">
+        <view class="supply-li">
+          <view class="supply-li-name">意向产品：</view>
+          <view class="supply-li-input" style='background:#FFF;'>{{show.pname}}</view>
+          <input type="text" name="type" value='art' style='display:none'></input>
+          <input type="text" name="pname" value='{{show.pname}}' style='display:none'></input>
+          <input type="text" name="recvuser_id" value='{{show.user_id}}' style='display:none'></input>
+        </view>
+        <view class="supply-li">
+          <view class="supply-li-name">姓名：</view>
+          <view class="supply-li-input"><input type='text' name="truename" placeholder="请输入姓名"  /></view>
+        </view>
+        <view class="supply-li">
+          <view class="supply-li-name">手机号：</view>
+          <view class="supply-li-input"><input type='text' name="tel" placeholder="请输入手机号"  /></view>
+        </view>
+        <view class="supply-li">
+          <view class="supply-li-name">备注：</view>
+          <view class="supply-li-input"><input type='text' name="remark" placeholder="（选填）"  /></view>
+        </view>
+
+      </view>
+
+      <!-- 提交部分 -->
+      <view class="supply-footer">
+        <button bindtap='CanSupply'>取消</button>
+        <button form-type='submit'>提交</button>
+      </view>
+    </form>
+  </view>
+  <view class="cover" hidden='{{ SupplyModel }}' catchtouchmove="move" bindtap="CanSupply"></view>
+
+</view>

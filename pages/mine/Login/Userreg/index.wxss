@@ -1,0 +1,33 @@
+/* pages/mine/Login/Userreg/index.wxss */
+page{background: #FFF;}
+.Logo{width:100%;}
+.Logo image{width:160rpx;height:160rpx;margin:40rpx  auto;}
+
+.InputView{width: 650rpx;margin:0 auto 30rpx;height:70rpx;background: #F9F9F9;border-bottom: 2rpx solid #EEE;position: relative;}
+.InputView input{width: 580rpx;height:60rpx;padding-top:5rpx;font-size:30rpx;margin:auto;}
+
+button{background: #3A99EB;color:#FFF;border-radius: 50rpx;}
+button::after{border:none;}
+.Login{width:650rpx;margin:40rpx auto;text-align: right;font-size: 30rpx;}
+
+.CompanyList view{width:580rpx;margin : 0 auto 10rpx;height:40rpx;font-size:28rpx;line-height:40rpx;overflow: hidden;}
+.CompanyList view:nth-last-child(1){margin-bottom: 30rpx;}
+
+.SendCode{position:absolute;top:18rpx;right:35rpx;font-size:28rpx;color:#3A99EB;z-index: 99}
+
+.Row{width:750rpx;padding:20rpx 0;border-bottom:2rpx solid #EEE;height:80rpx;line-height: 80rpx;background: #FFF;}
+.RowLeft{ font-size:30rpx; margin-left:35rpx; float: left;width:150rpx;}
+.RowRight{float:right;font-size: 28rpx;color:#999;margin-right:35rpx;width: 480rpx;text-align: right;position: relative;}
+.logo{width:80rpx;height:80rpx;float:right;background: #F9F9F9;}
+.RowRight input{heigth:60rpx;line-break: 60rpx;margin-top:10rpx;}
+.RowRight textarea{width: 480rpx;}
+.EditUserInfo{margin-top:40rpx;background: #FFF;width:100%;height:100rpx;font-size:32rpx;color:#3A99EB;}
+.EditUserInfo image{width:34rpx;height:34rpx;float:left;margin-top:33rpx;}
+.EditUserInfo view{margin:auto;width: 240rpx;text-align: center;height:100rpx;line-height: 100rpx; }
+
+.SaveInfo{width:600rpx;margin:70rpx auto;height:80rpx;line-height: 80rpx;background:#3A99EB;color:#FFF; text-align: center;}
+.select{width:32rpx;height:32rpx;position: absolute;top:24rpx;right: 0;}
+.picker{padding-right: 30rpx;}
+
+.ddd input{width:90%}
+.city{width:24rpx;height:30rpx;position: absolute;top:24rpx;right: 0;z-index: 999}

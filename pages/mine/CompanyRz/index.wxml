@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="header" wx:if="{{Status == 1}}">
+    <image src="/images/rz.png"></image>
+    <view class="rz">已认证</view>
+  </view>
+
+  <view class="header" wx:if="{{Status == 2}}">
+    <image src="/images/wrz.png"></image>
+    <view class="wrzs">未认证</view>
+  </view>
+
+  <view class="header" wx:if="{{Status == 0}}">
+    <image src="/images/wrz.png"></image>
+    <view class="wrzs">待审核</view>
+  </view>
+  
+  <!-- <view class="License-box" hidden='{{Rz}}'>
+      <text>营业执照</text>
+      <image src="{{Thumb}}" bindtap='ViewImage' data-url="{{Thumb}}"></image>
+  </view> -->
+
+  <view class="License-box">
+      <text>营业执照</text>
+      <view class="Sc" bindtap='ChangeThumb' wx:if="{{Status != 1 }}">上传</view>
+      <image src="{{Thumb}}" bindtap='ViewImage' data-url="{{Thumb}}" ></image>
+  </view>
+
+  <!-- 上传后弹框 -->
+    <view class="covers" catchtouchmove="move" hidden="{{Pop}}" bindtap='Closes'></view>
+    <view class="ShowPop" hidden="{{Pop}}" catchtouchmove="move">
+      <view class="PopImage" ><image src="{{PopThumb}}"></image></view>
+      <view class="close" bindtap='Closes'>
+      <image src="/images/x.png"></image>
+      </view>
+    </view>
+
+</view>

@@ -1,0 +1,81 @@
+<!--pages/mine/Login/Userreg/index.wxml-->
+<view class="container" hidden="{{Next}}">
+  <view class="Logo">
+    <image src="/images/logo.png"></image>
+  </view>
+
+  <view class="RegisterFormBox">
+    <form bindsubmit="RegisterForm">
+      <view class="InputView">
+        <input type="text" name="nickname" placeholder='请输入姓名'></input>
+      </view>
+      <view class="InputView">
+        <input type="text" name="email" placeholder='请输入邮箱'></input>
+      </view>
+      <view class="InputView">
+        <input type="text" name="company" placeholder='请输入所在单位' bindinput="CompanySearch" value='{{CompanyName}}'></input>
+      </view>
+      <view class="CompanyList" hidden='{{Company}}'>
+          <view wx:for="{{CompanyList}}" bindtap='CompanyValue' data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}           </view>
+      </view>
+      <view class="InputView">
+        <input type="text" name="posts" placeholder='请输入您的职务'></input>
+      </view>
+      <input type="text" name="unionid" value='{{wxinfo.unionId}}'  style='display:none'></input>
+      <input type="text" name="headimg" value='{{wxinfo.avatarUrl}}'  style='display:none'></input>
+      <button form-type='submit'>注册</button>
+    </form>
+  </view>
+  
+  <view class="Login" >您从未注册过该平台，请填写相关信息</view>
+
+</view>
+
+<view class="container" hidden="{{!Next}}">
+
+  <form  bindsubmit="SaveForm">
+    <view class="Row">
+      <view class="RowLeft">公司LOGO</view>
+      <view class="RowRight"  bindtap='ChangeLogo' style='font-size:24rpx;'>点击上传公司LOGO<image src="{{Thumb}}" class="logo" style='margin-left:10rpx;'></image></view>
+      <input type="text" name="thumb" value='{{BigThumb}}'  style='display:none'></input>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">公司名称</view>
+      <view class="RowRight"><input type='text' value='{{show.company}}' name="company"></input></view>
+    </view>
+    <input type="text" name="nickname" value='{{show.nickname}}'  style='display:none'></input>
+    <input type="text" name="email" value='{{show.email}}'  style='display:none'></input>
+    <input type="text" name="mobile" value='{{show.mobile}}'  style='display:none'></input>
+    <input type="text" name="posts" value='{{show.posts}}'  style='display:none'></input>
+    <input type="text" name="unionid" value='{{wxinfo.unionId}}'  style='display:none'></input>
+    <input type="text" name="headimg" value='{{wxinfo.avatarUrl}}'  style='display:none'></input>
+
+    <view class="Row">
+      <view class="RowLeft">所在地</view>
+      <view class="RowRight">
+        <picker mode="region" bindchange="bindRegionChange"  value="{{region}}" custom-item="{{customItem}}" >
+        <view class="picker" >
+          {{region[0]}} {{region[1]}} {{region[2]}}
+        </view>
+        <input type="text" name="province" value='{{region[0]}}'  style='display:none'></input>
+        <input type="text" name="city" value='{{region[1]}}'  style='display:none'></input>
+        <input type="text" name="district" value='{{region[2]}}'  style='display:none'></input>
+        <image src="/images/select.png" class="select"></image>
+        </picker>
+      </view>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">详细地址</view>
+      <view class="RowRight ddd">
+        <input type='text' name="address" value='{{address}}' ></input>
+        <image src="/images/city.png" class="city" bindtap='ChangeAddress' ></image>
+      </view>
+    </view>
+    <view class="Row" style='height:300rpx;line-height:40rpx;padding:40rpx 0'>
+      <view class="RowLeft">公司介绍</view>
+      <view class="RowRight" ><textarea maxlength="-1"  name="content" placeholder="公司简介（可暂时不填）" ></textarea></view>
+    </view>
+    <button class="SaveInfo" form-type='submit'>完成注册</button>
+  </form>
+
+</view>

@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="Logo">
+    <image src="/images/logo.png"></image>
+  </view>
+
+  <view class="RegisterFormBox">
+    <form bindsubmit="RegisterForm">
+      <view class="InputView">
+        <input type="text" name="nickname" placeholder='请输入姓名'></input>
+      </view>
+      <view class="InputView">
+        <input type="password" name="password" placeholder='请输入密码'></input>
+      </view>
+      <view class="InputView">
+        <input type="text" name="email" placeholder='请输入邮箱'></input>
+      </view>
+      <view class="InputView">
+        <input type="text" name="company" placeholder='请输入所在单位' bindinput="CompanySearch" value='{{CompanyName}}'></input>
+      </view>
+      <view class="CompanyList" hidden='{{Company}}'>
+          <view wx:for="{{CompanyList}}" bindtap='CompanyValue' data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+      </view>
+      <view class="InputView">
+        <input type="text" name="posts" placeholder='请输入您的职务'></input>
+      </view>
+      <view class="InputView">
+        <input type="text" name="mobile" placeholder='请输入手机号' value='{{mobile}}' bindblur="MobileInput"></input>
+      </view>
+      <view class="InputView">
+        <input type="text" maxlength="6" name="code" placeholder='请输入验证码'></input>
+        <view class="SendCode" bindtap="GetCode" >{{SendView}}</view>
+      </view>
+      <button form-type='submit'>注册</button>
+    </form>
+  </view>
+  
+  <view class="Login" bindtap='GoLogin'>已有账号，去登陆</view>
+
+</view>

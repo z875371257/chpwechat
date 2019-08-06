@@ -1,0 +1,43 @@
+<view class="container">
+
+  <form  bindsubmit="SaveForm">
+    <view class="Row">
+      <view class="RowLeft">公司LOGO</view>
+      <view class="RowRight"><image src="{{Thumb}}" class="logo" bindtap='ChangeLogo'></image></view>
+      <input type="text" name="thumb" value='{{BigThumb}}'  style='display:none'></input>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">公司名称</view>
+      <view class="RowRight"><input type='text' value='{{show.name}}' name="name"></input></view>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">所在地</view>
+      <view class="RowRight">
+        <picker mode="region" bindchange="bindRegionChange"  value="{{region}}" custom-item="{{customItem}}" >
+        <view class="picker" >
+          {{region[0]}} {{region[1]}} {{region[2]}}
+        </view>
+        <input type="text" name="province" value='{{region[0]}}'  style='display:none'></input>
+        <input type="text" name="city" value='{{region[1]}}'  style='display:none'></input>
+        <input type="text" name="district" value='{{region[2]}}'  style='display:none'></input>
+        <input type="text" name="id" value='{{show.id}}'  style='display:none'></input>
+        
+        <image src="/images/select.png" class="select"></image>
+        </picker>
+      </view>
+    </view>
+    <view class="Row">
+      <view class="RowLeft">详细地址</view>
+      <view class="RowRight">
+        <input type='text' name="address" value='{{address}}' style='padding-right:40rpx;'></input>
+        <image src="/images/city.png" class="city"  bindtap='ChangeAddress'></image>
+      </view>
+    </view>
+    <view class="Row" style='height:300rpx;line-height:40rpx;padding:40rpx 0'>
+      <view class="RowLeft">公司介绍</view>
+      <view class="RowRight" ><textarea maxlength="-1"  name="content" placeholder="请输入内容提纲" value="{{ show.content }}"></textarea></view>
+    </view>
+    <button class="SaveInfo" form-type='submit'>保存</button>
+  </form>
+
+</view>

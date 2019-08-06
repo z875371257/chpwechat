@@ -1,0 +1,27 @@
+/* pages/mine/Logo/index.wxss */
+page{background: #FFF;}
+.Logo{width:100%;text-align: center;margin-bottom: 100rpx;}
+.Logo image{width:160rpx;height:160rpx;margin:100rpx  auto 20rpx;}
+.Logo view{font-size:30rpx;}
+.Logo text{font-size: 28rpx;color:#999;}
+.InputView{width: 650rpx;margin:0 auto 30rpx;height:70rpx;background: #F9F9F9;border-bottom: 2rpx solid #EEE;position: relative;}
+.InputView input{width: 580rpx;height:60rpx;padding-top:5rpx;font-size:30rpx;margin:auto;}
+
+button{background: #3A99EB;color:#FFF;border-radius: 50rpx;}
+button::after{border:none;}
+.Login{width:650rpx;margin:40rpx auto;text-align: right;font-size: 30rpx;}
+
+.CompanyList view{width:580rpx;margin : 0 auto 10rpx;height:40rpx;font-size:28rpx;line-height:40rpx;overflow: hidden;}
+.CompanyList view:nth-last-child(1){margin-bottom: 30rpx;}
+
+
+.SendCode{position:absolute;top:18rpx;right:35rpx;font-size:28rpx;color:#3A99EB;z-index: 99}
+
+button{width:600rpx}
+.b1{border:2rpx solid #3A99EB;background: #FFF;color:#3A99EB}
+.b2{margin-top:40rpx;background: #3A99EB;color: #FFF;}
+
+/* Menu  */
+.menu{width:80%;height:90rpx;line-height:90rpx;margin-bottom:20rpx;}
+.menu view{width:50%;float:left;text-align: center;font-size:32rpx;}
+.menu .selected{color:#E65617}

@@ -1,0 +1,74 @@
+<!--pages/mine/Share/index.wxml-->
+<view class="container">
+<view class="GoHome" bindtap='GoHome'> <image src='/images/gohome.png'></image>  </view>
+
+  <view id="CardBox">
+
+    <view class="Level bred" wx:if="{{card.level_id == 4}}">
+      <image src="/images/crown.png"></image>
+      <text>主任委员</text>
+    </view>
+
+    <view class="Level byellow" wx:if="{{card.level_id == 3}}">
+      <image src="/images/crown.png"></image>
+      <text>常务委员</text>
+    </view>
+
+    <view class="Level bgray" wx:if="{{card.level_id == 2}}">
+      <image src="/images/crown.png"></image>
+      <text>认证会员</text>
+    </view>
+
+    <image src="/images/Bigcard.png" class="CardImg"></image>
+
+    <view class="Info">
+      <view class="InfoName">{{card.nickname}}</view>
+      <view class="InfoPosts">{{card.posts}}</view>
+    </view>
+
+    <view class="ComInfo">
+      <view class="ComTel"  bindtap='CallTel' data-tel="{{card.mobile}}">
+        <image src="/images/tel.png"></image>
+        {{card.mobile}}
+      </view>
+      <view class="ComName"  bindtap='CompanyShow' data-id="{{card.company_id}}">
+        <image src="/images/com.png"></image>
+        {{card.name}}
+      </view>
+      <view class="ComAddress">
+        <image src="/images/address.png"></image>
+        {{card.address}}
+      </view>
+    </view>
+
+  </view>
+  
+  <view class="Cz">
+  <button open-type="share"><image src="/images/share.png"></image>分享名片</button>
+  <view  bindtap='CollectSave' data-id="{{card.id}}" wx:if="{{card.collect}}"> 
+        <image src="/images/ysc.png"></image>
+        收藏名片
+  </view>
+  <view style='color:#3A99EB;border:2rpx solid #4A9FE8' wx:else bindtap='CollectDel' data-id="{{card.id}}"> <image src="/images/ysc.png"></image>已收藏</view>
+
+  <view  bindtap='MyCard'  > 
+        <image src="/images/card.png"></image>
+        我的名片
+  </view>
+
+  </view>
+
+  <view class="MoreCard">
+    <view class="Rests" wx:if="{{ Cards != ''}}">该公司其他名片 <image src="/images/nobottom.png"></image> </view>
+    <block wx:for="{{ Cards }}">
+      <view class="MoreCardList" >
+        <view class="CardListName" bindtap='ShowUserCard' data-id="{{item.id}}">{{item.nickname}}</view>
+        <view class="CardListPosts">{{item.posts}}</view>
+        <view class="CardListCollect" wx:if="{{item.collect}}" bindtap='CollectSave' data-id="{{item.id}}"><image src="/images/sc.png"></image>收藏名片</view>
+        <view class="CardListCollect" style='color:#3A99EB;border:2rpx solid #4A9FE8' wx:else bindtap='CollectDel' data-id="{{item.id}}"><image src="/images/ysc.png"></image>已收藏</view>
+      </view>
+    </block>
+  </view>
+
+
+</view>

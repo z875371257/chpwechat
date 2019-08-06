@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="Row">
+    <view class="RowLeft">公司LOGO</view>
+    <view class="RowRight"><image src="{{thumb}}" class="logo"></image></view>
+  </view>
+  <view class="Row">
+    <view class="RowLeft">公司名称</view>
+    <view class="RowRight">{{show.name}}</view>
+  </view>
+  <view class="Row">
+    <view class="RowLeft">所在地</view>
+    <view class="RowRight">
+    {{show.province}}{{show.city}}{{show.district}}
+    </view>
+  </view>
+  <view class="Row">
+    <view class="RowLeft">详细地址</view>
+    <view class="RowRight">{{show.address}}</view>
+  </view>
+  <view class="Row" style='height:300rpx;line-height:40rpx;padding:40rpx 0'>
+    <view class="RowLeft">公司介绍</view>
+    <view class="RowRight" style='height:316rpx;overflow:hidden;'>{{show.content}}</view>
+  </view>
+
+  <view class="EditUserInfo" bindtap='EditCompanyInfo' data-id="{{show.id}}"> <view><image src="/images/edit.png"></image>编辑公司信息</view></view>
+
+</view>

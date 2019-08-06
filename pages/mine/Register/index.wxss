@@ -1,0 +1,16 @@
+/* pages/mine/Register/index.wxss */
+page{background: #FFF;}
+.Logo{width:100%;}
+.Logo image{width:160rpx;height:160rpx;margin:40rpx  auto;}
+
+.InputView{width: 650rpx;margin:0 auto 30rpx;height:70rpx;background: #F9F9F9;border-bottom: 2rpx solid #EEE;position: relative;}
+.InputView input{width: 580rpx;height:60rpx;padding-top:5rpx;font-size:30rpx;margin:auto;}
+
+button{background: #3A99EB;color:#FFF;border-radius: 50rpx;}
+button::after{border:none;}
+.Login{width:650rpx;margin:40rpx auto;text-align: right;font-size: 30rpx;}
+
+.CompanyList view{width:580rpx;margin : 0 auto 10rpx;height:40rpx;font-size:28rpx;line-height:40rpx;overflow: hidden;}
+.CompanyList view:nth-last-child(1){margin-bottom: 30rpx;}
+
+.SendCode{position:absolute;top:18rpx;right:35rpx;font-size:28rpx;color:#3A99EB;z-index: 99}

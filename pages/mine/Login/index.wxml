@@ -1,0 +1,65 @@
+<view class="container" hidden='{{ Login }}' >
+  <view class="Logo">
+    <image src="/images/logo.png"></image>
+    <view>清洁供热商务通</view>
+    <text>让生意更简单、更高效!</text>
+  </view>
+  <!-- <view class="RegisterFormBox">
+    <form bindsubmit="LoginForm">
+      <view class="InputView">
+        <input type="text" name="name" placeholder='请输入用户名或手机号' ></input>
+      </view>
+      <view class="InputView">
+        <input type="password"  name="password" placeholder='请输入密码'></input>
+      </view>
+      <button form-type='submit'>登录</button>
+    </form>
+  </view>
+  <view class="Login" bindtap='GoRegister'>暂无账号，去注册</view> -->
+
+  <!-- <view class="Other">其它登录方式</view> -->
+ 
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="b1">登录/注册</button>
+
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='b2'>微信手机号快捷登录</button>
+
+</view>
+
+<view class="container" hidden='{{ !Login }}' >
+  <view class="Logo">
+    <image src="/images/logo.png"></image>
+    <view>清洁供热商务通</view>
+    <text>让生意更简单、更高效!</text>
+  </view>
+
+   <view class='menu'>
+      <view class="{{menu1?'selected':''}}"   bindtap="ShowCut" data-id="1">短信验证码登录</view>
+      <view class="{{menu2?'selected':''}}" bindtap="ShowCut" data-id="2">账号密码登录</view>
+  </view>
+
+  <view class="RegisterFormBox">
+    <form bindsubmit="TelForm"  hidden='{{ !menu1 }}'>
+      <view class="InputView">
+        <input type="text" name="mobile" placeholder='请输入手机号' value='{{mobile}}' bindblur="TelBlur" ></input>
+      </view>
+      <view class="InputView">
+        <input type="text" maxlength="6" name="code" placeholder='请输入验证码'></input>
+        <view class="SendCode" bindtap="GetCode" >{{SendView}}</view>
+      </view>
+      <button form-type='submit'>登录</button>
+    </form>
+
+    <form bindsubmit="LoginForm" hidden='{{ !menu2 }}'>
+      <view class="InputView">
+        <input type="text" name="name" placeholder='请输入用户名或手机号' ></input>
+      </view>
+      <view class="InputView">
+        <input type="password"  name="password" placeholder='请输入密码'></input>
+      </view>
+      <button form-type='submit'>登录</button>
+    </form>
+
+  </view>
+
+
+</view>

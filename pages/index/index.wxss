@@ -1,0 +1,74 @@
+/**index.wxss**/
+.container{background: #FFF;}
+/* Banner */
+.head-image{width:100%;height:250rpx;}
+.imgs{width:100%;height:100%;}
+
+/* 采购轮播 */
+.index-news{width:100%;height:190rpx;}
+.ROll-Swipers{width:100%;height:100%}
+.index-news-slide{width: 680rpx;height:100rpx;margin:30rpx auto}
+.index-news-slide image{width:150rpx;height:113rpx;float:left;}
+.index-news-tit{float:left;padding-left:30rpx;width:494rpx;font-size:30rpx;height:100rpx;overflow: hidden;line-height:50rpx;}
+
+/* 平台会员 */
+.index-member{width:100%; height:280rpx; margin-top:10rpx; background:#F9F9F9; }
+.index-member-tit{height: 30rpx; padding-top:40rpx; width:680rpx;margin:auto}
+.member-tit-left{width: 200rpx; font-size: 36rpx; float: left;  }
+.member-tit-more{display: inline-block; color:#999; font-size: 30rpx; padding-right:32rpx; float: right; position: relative; }
+.member-tit-more image{display: inline-block; width:24rpx; height:30rpx; position: absolute; top:8rpx; }
+.scroll-box{width: 100%;white-space: nowrap; height:160rpx; overflow: hidden; margin-top:50rpx; }
+.member-scroll{width:670rpx;overflow:hidden;margin:auto; }
+.new-img{width: 150rpx; height: 113rpx; display: inline-block; margin-left:18rpx; position: relative}
+.new-img:nth-child(1){margin-left:0;}
+.slide-crown{position: absolute;width:46rpx;height:30rpx;right:0;opacity: 0.9;top:8rpx;border-bottom-left-radius: 30rpx;border-top-left-radius: 30rpx;  }
+.slide-crown image{width:36rpx;height:30rpx;padding-left:8rpx; }
+.a-imgs{width: 100%; height: 100%; }
+
+/* 列表 */
+.index-compnay-list{width:100%;margin:auto;}
+.index-company-tit{width: 680rpx;margin:30rpx auto 30rpx;}
+.index-city{float:left;display: inline-block;font-size:36rpx;}
+.city-list{border-top:2rpx solid #EEE;border-left: 2rpx solid #EEE;margin-top:10rpx;}
+.city-list view{border-right:2rpx solid #EEE;border-bottom: 2rpx solid #EEE;display: inline-block;font-size:30rpx;width:24.7%;text-align: center;height:50rpx;line-height: 50rpx;vertical-align:top;}
+
+.city-sected{width:24rpx;height:30rpx;display: inline-block;}
+.index-company-more{float: right;position: relative;padding-right:32rpx;color:#999;display: inline-block;font-size:30rpx}
+.index-company-more image{width:24rpx;height:30rpx;position: absolute;top:8rpx;display: inline-block}
+
+.company-ul{clear:both;}
+.company-li{ height:150rpx;border-bottom:2rpx solid #EEE;width:680rpx; margin:37rpx auto 0;}
+
+.li-thumb{width:185rpx;float: left;height:113rpx;position: relative;}
+.company-level{width:50rpx; height:100%;display: inline-block;font-size:20rpx;line-height:20rpx;position: relative;}
+.company-level image{width:32rpx;height:26rpx;position: absolute;}
+.company-level text{position: absolute;top:28rpx;color:#FFF;left:6rpx;}
+.company-thumb{width:150rpx;height:113rpx;position: absolute;border-top-left-radius: 16rpx;border-bottom-left-radius: 16rpx;top:0;left:35rpx;}
+
+
+.li-title{float: left;width:366rpx;height: 116rpx;padding-left:20rpx;overflow: hidden;}
+.company-name{height:40rpx;width:100%;overflow: hidden;font-size:30rpx;}
+.company-yw{color:#999;font-size:28rpx;height:76rpx;overflow: hidden;}
+.company-yw view{display:inline-block;padding-right:20rpx;}
+.index-news2{width:100%;height:190rpx;background: #F9F9F9;}
+.li-card{float:left;padding-left:20rpx;font-size:26rpx;color:#3A99EB;width:80rpx;margin-top:12rpx;text-align: center}
+.li-card image{width:50rpx;height:50rpx;margin:auto}
+
+/* 查看名片 */
+.ShowCard{width:680rpx}
+#CardBox{background: #FFF;z-index: 99;position: fixed;top:180rpx;}
+.Cz{position: fixed;z-index: 99;top:680rpx;}
+.Cz view{float:left;margin-left:100rpx;background: #FFF;font-size:28rpx;padding:10rpx 20rpx;border-radius: 40rpx;}
+.Cz view image{width:34rpx;height:34rpx;float:left;margin-top:2rpx;}
+.close{width:54rpx;height:54rpx;position: fixed;top:840rpx;z-index: 99;left:346rpx;}
+.close image{width:100%;height:100%;}
+
+/* Pop */
+.ShowPop{ width:680rpx;z-index: 101;position: fixed;top:180rpx;height: 100%; }
+.PopImage{width:522rpx;height: 632rpx;margin:auto;}
+.PopImage image{width:100%;height: 100%;margin:auto;}
+
+
+
+/* 地区遮盖 */
+.cityRight { width: 100%; height: 100%; position: fixed; top:0; left:0; z-index: 199; background: rgba(0, 0, 0, 0.3); text-align: center; }

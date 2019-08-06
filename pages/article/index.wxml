@@ -1,0 +1,37 @@
+<view class="container">
+    <!-- 搜索框 -->
+    <view class="head-search">
+        <view class="search-top" bindtap="searchbind">
+            <image src="/images/home_search.png"></image>
+            <input type="text" class="search"  placeholder="{{keyword}}"  placeholder-class="search-input" confirm-type="search" bindchange="bindchange" adjust-position />
+        </view>
+    </view>
+
+      <!-- 采购列表 -->
+      <view class="article_list"  wx:for="{{article}}">
+          <view class="artleft" bindtap='ArticleShow' data-id="{{item.id}}">  
+            <image src="{{item.thumb}}"></image>
+          </view>
+          <view class="artright">   
+            <view class="artright-name" bindtap='ArticleShow' data-id="{{item.id}}" >{{item.title}}</view>
+            <view class="article-company">
+                <view class="art-free bred"  wx:if="{{item.level == 4}}"> <image src="/images/crown.png"></image>主任委员</view>
+                <view class="art-free byellow"  wx:if="{{item.level == 3}}"> <image src="/images/crown.png"></image>常务委员</view>
+                <view class="art-free bgray"  wx:if="{{item.level == 2}}"> <image src="/images/crown.png"></image>认证会员</view>
+                <view class="art-company-name"  wx:if="{{item.level == 1}}" style='width:auto' bindtap='CompanyShow' data-id="{{item.company_id}}">{{item.company}}</view>
+                <view class="art-company-name"  wx:if="{{item.level != 1}}" bindtap='CompanyShow' data-id="{{item.company_id}}">{{item.company}}</view>
+                <image src="/images/more.png" class="company-name-more"></image>
+            </view>
+          </view>
+      </view>
+
+      <!-- 查看更多按钮 -->
+      <view class="more-box" hidden='{{!NotArt}}'  bindtap="More">
+        <view class="more">查看更多<image src="/images/morebottom.png"></image></view>
+      </view>
+
+      <!-- 无内容提示 -->
+      <view class="NotPro" hidden='{{NotArt}}'>到底了^_^</view>
+
+
+</view>

@@ -1,0 +1,6 @@
+/* pages/mine/Client/index.wxss */
+.ClientBox{width:100%;background: #FFF;}
+.ClientList{width:680rpx;margin:auto;height:120rpx;border-bottom: 2rpx solid #EEE;line-height: 120rpx;clear: both}
+.ClientName{ width:140rpx;font-size:32rpx;display: inline-block;overflow: hidden;}
+.ClientPosts{ width:440rpx;font-size:28rpx;display: inline-block;color:#999;overflow: hidden;height:100%;}
+.ClientDel{ float:right;font-size:30rpx; background: #F1F1F1;color:#999;height:56rpx;margin-top:36rpx;line-height: 56rpx;width:100rpx;border-radius: 40rpx;text-align: center;}

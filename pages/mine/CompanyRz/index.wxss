@@ -1,0 +1,18 @@
+/* pages/mine/CompanyRz/index.wxss */
+.header{width: 100%;height:316rpx;position: relative}
+.header image{width: 100%;height: 100%;}
+.header view{position: absolute;text-align: center;width: 100%;top:180rpx;font-size:38rpx;}
+.rz{color:#E65617}
+.wrzs{color:#AAA}
+
+.License-box{width: 100%;height:190rpx;background: #FFF;margin-top:20rpx;line-height: 190rpx;}
+.License-box text{float:left;font-size:30rpx;margin-left: 35rpx;}
+.License-box image{width: 160rpx;height:120rpx;float:right;margin-right: 35rpx;margin-top:35rpx;}
+.Sc{float:right;margin-right: 35rpx;font-size:30rpx;background: #E65617;color:#FFF;height:60rpx;width:180rpx;line-height: 60rpx;text-align: center;margin-top:65rpx;border-radius: 50rpx;}
+
+/* Pop */
+.ShowPop{ width:680rpx;z-index: 101;position: fixed;top:180rpx;height: 100%; }
+.PopImage{width:522rpx;height: 632rpx;margin:auto;}
+.PopImage image{width:100%;height: 100%;margin:auto;}
+.close{width:54rpx;height:54rpx;position: fixed;top:840rpx;z-index: 99;left:346rpx;}
+.close image{width:100%;height:100%;}

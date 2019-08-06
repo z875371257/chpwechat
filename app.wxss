@@ -1,0 +1,80 @@
+/**app.wxss**/
+page{background: #F9F9F9;}
+.container {
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+image{display: block}
+.clear{clear:both}
+.bred{background:#F83249;}
+.byellow{background: #ECAF19;}
+.bgray{background: #d8b796;}
+.bwrz{background: #CCC;}
+.Row{background: #FFF;}
+
+.rimred{border:2rpx solid #F83249;}
+.rimyellow{border:2rpx solid #ECAF19;}
+.rimgray{border:2rpx solid #d8b796;}
+.wrz{border:2rpx solid #CCC;}
+.Error{color:#E65617;font-size:30rpx;text-align:center;width:100%;margin-top:30rpx;}
+contact-button{opacity: 0;line-height: 70rpx;}
+
+/* 查看更多按钮 */
+.more-box{width:100%;margin:30rpx 0;}
+.more{width:200rpx;height:60rpx;background: #FCEDE6;margin:auto;text-align: center;line-height:60rpx;
+font-size:30rpx;color:#E65617;border-radius: 30rpx;}
+.more image{width:24rpx;height:24rpx;display: inline-block}
+
+/* 搜索框 */
+.head-search{width:100%; height: 120rpx; background: #E65617; z-index:99;}
+.search-top{width: 680rpx; margin:auto; font-size: 28rpx; padding-top:20rpx; position: relative; }
+.search-top image{width:48rpx; height:48rpx; position: absolute; top:32rpx; left:30rpx; z-index: 99; }
+.search{background: #F4F4F4; padding:0 40rpx 0 90rpx; border-radius: 10rpx; height:70rpx; line-height: 70rpx; color:#aaaaaa; }
+
+/* 遮盖 */
+.cover { width: 100%; height: 100%; top:0; left:0; z-index: 98; background: rgba(0, 0, 0, 0.3); text-align: center; position: fixed}
+.covers { width: 100%; height: 100%; top:0; left:0; z-index: 101; background: rgba(0, 0, 0, 0.3); text-align: center; position: fixed}
+
+/* 筛选栏 */
+.screen{width:100%;height:80rpx;border-bottom: 2rpx solid #EEE;font-size:32rpx;line-height: 80rpx;overflow: hidden;}
+.screen-li{display: inline-block;width:33.3%;text-align: center;vertical-align:top;position: relative;height:100%;overflow: hidden;z-index:100;background: #FFF;}
+.screen-li:nth-child(1){width:33.4%}
+.screen-li view{max-width: 160rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;height:100%;display: inline-block}
+.screen-li image{width: 20rpx;height:20rpx;display: inline-block;position:absolute;top:32rpx;}
+.screen-active{color:#E65617;}
+
+/* Card名片 */
+#CardBox{width:676rpx;margin:40rpx auto;box-shadow: 10rpx 10rpx 20rpx #EEE inset;position: relative;box-shadow: 0px 2px 15px rgba(0,0,0,0.2);}
+.CardImg{width:676rpx;height:420rpx}
+.Level{position: absolute;width:160rpx;height:80rpx;right:0;font-size: 30rpx;text-align: center;color:#FFF;line-height: 24rpx;top:56rpx;}
+.Level image{width:48rpx;height:40rpx;margin:4rpx auto 0;}
+.Info{position: absolute; top:60rpx;left:50rpx;}
+.InfoName{font-size:50rpx;line-height: 60rpx;}
+.InfoPosts{font-size:30rpx;line-height: 82rpx;}
+.ComInfo{position: absolute;width:576rpx;height:156rpx;top:266rpx;left:50rpx;font-size:20rpx;overflow: hidden;line-height:24rpx;}
+.ComTel{width:140rpx;height:100%;border-right: 2rpx solid #EEE;float: left;}
+.ComTel image{width:44rpx;height:44rpx;margin-bottom: 10rpx}
+.ComName{width:172rpx;height:100%;border-right: 2rpx solid #EEE;float: left;padding:0 20rpx;}
+.ComName image{width:44rpx;height:44rpx;margin-bottom: 10rpx}
+.ComAddress{width:200rpx;height:93%;float: left;padding-left:20rpx;overflow: hidden; }
+.ComAddress image{width:44rpx;height:44rpx;margin-bottom: 10rpx}
+
+/* 分享 */
+.share{position: fixed;right: 30rpx;bottom:80rpx;background:none;padding:0;height:100rpx;}
+.share image{width: 100rpx;height:100rpx;}
+/* 回到首页 */
+.GoHome{position: fixed;right: 50rpx;bottom:80rpx;height:100rpx;opacity: 0.9;z-index: 999;}
+.GoHome image{width: 100rpx;height:100rpx;}
+
+/* 没权限样式 */
+.msg1 { width:320rpx;  margin: 0rpx auto 0rpx; text-align: center;}
+.msg1 image{width:320rpx;height:270rpx;}
+.msg1 button{background: #FFF;line-height:40rpx;}
+.msg1 button::after{border:none;}
+.jt {width:24rpx!important;height:30rpx!important;position:relative;top:6rpx;display:inline-block;}
+.error{color:#999;font-size:28rpx;}

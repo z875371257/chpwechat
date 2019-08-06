@@ -1,0 +1,19 @@
+<view class="container">
+
+  <form bindsubmit="SaveForm">
+    <view class="Row">
+      <view class="RowLeft">原职务</view>
+      <view class="RowRight">{{info.posts}}</view>
+    </view>
+
+    <view class="Row">
+      <view class="RowLeft">现职务</view>
+      <view class="RowRight">
+        <input type='text'  name="posts"  placeholder='请输入职务' ></input>
+      </view>
+    </view>
+
+    <button class="SaveInfo" form-type='submit'>保存</button>
+  </form>
+
+</view>

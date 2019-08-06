@@ -1,0 +1,13 @@
+/* pages/mine/Message/index.wxss */
+.Message1{background: #FFF;width:100%;border-bottom: 2rpx solid #EEE;height:160rpx;}
+.Message1 .MessageTitle{width:660rpx;margin:auto;text-align: left;font-size:34rpx;padding-top:30rpx;height:60rpx;}
+.Message1 .MessageTime{margin-left:50rpx;font-size:26rpx;color:#999;float:left;margin-top:10rpx;}
+.Message1 .MessageDel{float:right;margin-right: 50rpx;font-size: 28rpx;color: #666;margin-top:10rpx;}
+.unread{position: relative;}
+.unread::before{   position: absolute; content: ''; width: 12rpx; height: 12rpx;border-radius: 50%;background: red; left: -18rpx;top: 44rpx;}
+
+.Message2{background: #FFF;width:100%;border-bottom: 2rpx solid #EEE;height:240rpx;}
+.Message2 .MessageTitle{width:660rpx;margin:auto;text-align: left;font-size:34rpx;padding-top:30rpx;height:60rpx;}
+.Message2 .MessageDes{width:660rpx;margin:auto;font-size:28rpx;color:#999;height: 80rpx;overflow: hidden;}
+.Message2 .MessageTime{margin-left:50rpx;font-size:26rpx;color:#999;float:left;margin-top:10rpx;}
+.Message2 .MessageDel{float:right;margin-right: 50rpx;font-size: 28rpx;color: #666;margin-top:10rpx;}

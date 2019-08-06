@@ -1,0 +1,53 @@
+<!-- 我的同事 （转让管理员） -->
+<view class="container">
+
+    <block wx:for="{{list}}" wx:if="{{item.id == admin}}" >
+      <view class="Row" >
+        <view class="RowLeft">{{item.nickname}}（{{item.posts}}）</view>
+        <view class="RowCenter">{{item.mobile}}</view>
+        <view class="RowRight">
+          <switch  class="switch-kg" checked  color="#3A99EB"  disabled    />
+        </view>
+      </view>
+    </block>
+
+    <block wx:for="{{list}}"  wx:if="{{item.id != admin}}">
+      <view class="Row" >
+        <view class="RowLeft">{{item.nickname}}（{{item.posts}}）</view>
+        <view class="RowCenter">{{item.mobile}}</view>
+        <view class="RowRight">
+          <switch  class="switch-kg" color="#3A99EB" disabled bindtap="TabSwitch" data-user="{{item.id}}"   />
+        </view>
+      </view>
+    </block>
+
+    <!-- 转移管理员 -->
+  <view class="supply-model" hidden='{{ ZyModel }}'>
+    <form bindsubmit="CollForm" >
+
+      <!-- 头部 -->
+      <view class="supply-header">
+        <view class="supply-close" bindtap='switchChange'><image src="/images/close.png"></image></view>
+        <view class="supply-title">转移管理员</view>
+        <view class="supply-description">转移后，您将无法拥有管理员权限</view>
+      </view>
+
+      <!-- 表单部分 -->
+      <view class="supply-body">
+        <input type='text' name="uid" style='display:none' value='{{selectadmin}}'></input>
+        <input type='text' name="id" style='display:none' value='{{info.company_id}}'></input>
+        确定转移您的管理员权限？
+      </view>
+
+      <!-- 提交部分 -->
+      <view class="supply-footer">
+        <button bindtap='switchChange'>取消</button>
+        <button form-type='submit'>确定</button>
+      </view>
+    </form>
+  </view>
+
+  <view class="cover" hidden='{{ ZyModel }}' catchtouchmove="move" bindtap="switchChange"></view>
+
+
+</view>

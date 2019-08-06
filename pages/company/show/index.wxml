@@ -1,0 +1,100 @@
+<import src="../../../wxParser/m.wxml"/>
+<view class="GoHome" bindtap='GoHome'> <image src='/images/gohome.png'></image>  </view>
+<view class="container">
+  <view class="bigthumb">
+      <image src="/images/bigthumb.jpg"></image>
+  </view>
+  <view class="show-logo"><image src="{{show.thumb}}"></image></view>
+  <view class="show-content">
+      <!-- 公司信息 -->
+    <view class="show-company">
+
+          <view class="show-company-thumb bred" wx:if="{{ show.level_id == 4 }}">
+              <image src="/images/crown.png"></image>
+              <text>主任\n委员</text>
+          </view>
+          <view class="show-company-thumb byellow" wx:if="{{ show.level_id == 3 }}">
+              <image src="/images/crown.png"></image>
+              <text>常务\n委员</text>
+          </view>
+          <view class="show-company-thumb bgray" wx:if="{{ show.level_id == 2 }}">
+              <image src="/images/crown.png"></image>
+              <text>认证\n会员</text>
+          </view>
+
+          <view class="li-title"> 
+              <view class="company-name">{{show.name}}</view>
+              <view class="company-xj">推荐星级 <image src="{{ show.star }}"></image></view> 
+          </view>
+
+          <view class="li-card" bindtap='ShowCard' data-id="{{show.user_id}}"><image src="/images/card.png"></image>看名片</view>
+    </view>
+
+    <!-- 中间过渡 -->
+    <view class="xian" ></view>
+
+    <view class='menu'>
+      <view class="{{menu1?'selected':''}}"   bindtap="ShowCut" data-id="1">企业信息</view>
+      <view class="{{menu2?'selected':''}}" bindtap="ShowCut" data-id="2">业绩动态</view>
+      <view class="{{menu3?'selected':''}}" bindtap="ShowCut" data-id="3">产品库</view>
+    </view>
+
+    <view class="show-menu-content">
+      <view hidden='{{ !menu1 }}' class="content-box">
+        <view class="menu-title">企业介绍</view>
+        <view class="company-content">
+             <template is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+        </view>
+        <view class="xian"></view>
+        <view class="menu-title" style='margin-top:30rpx;'>荣誉证书</view>
+        <view class="show-book-box">
+
+          <block  wx:for="{{ show.validate }}" wx:for-index="in">
+            <view class="show-book"  wx:if="{{ in % 3 == 0}}" style='margin-left:0'>
+              <image src="{{ item.thumb }}"  bindtap='ViewImage' data-url="{{item.thumb}}"></image>
+              {{item.name}}
+            </view>
+            <view class="show-book"  wx:else>
+              <image src="{{ item.thumb }}"  bindtap='ViewImage' data-url="{{item.thumb}}"></image>
+              {{ item.name }}
+            </view>
+          </block>
+
+        </view>
+
+      </view>
+      <!-- 业绩动态 -->
+      <view hidden='{{ !menu2 }}' class="content-box dynamic-box">
+
+        <block wx:for="{{show.performance}}" wx:for-index="in">
+        <view class="dpp" wx:if="{{show.performancecount - in != 1}}">
+          <view class="dynamic-title">{{ item.description }}</view>
+          <view class="dynamic-time">{{ item.publish_time }}</view>
+        </view>
+
+        <view class="dynamic-li" wx:else >
+          <view class="dynamic-title">{{ item.description  }}</view>
+          <view class="dynamic-time">{{ item.publish_time }}</view>
+        </view>
+        </block>
+      </view>
+
+      <!-- 产品库 -->
+      <view hidden='{{ !menu3 }}' class="content-box product-box">
+        <block  wx:for="{{show.product}}" wx:for-index="in">
+            <view class="show-product"  wx:if="{{ in % 3 == 0}}" style='margin-left:0' bindtap='ProductShow' data-id="{{item.id}}">
+              <image src="{{item.thumb}}"></image>
+              {{item.name}}
+            </view>
+            <view class="show-product"  wx:else bindtap='ProductShow' data-id="{{item.id}}">
+              <image src="{{item.thumb}}"></image>
+              {{item.name}}
+            </view>
+          </block>
+      </view>
+    </view>
+
+
+  </view>
+
+</view>
